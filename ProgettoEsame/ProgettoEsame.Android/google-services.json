@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "968730547923",
+    "firebase_url": "https://progmobilexamarin-ee8ad.firebaseio.com",
+    "project_id": "progmobilexamarin-ee8ad",
+    "storage_bucket": "progmobilexamarin-ee8ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968730547923:android:cfaf656d7c2ea12d8a6626",
+        "android_client_info": {
+          "package_name": "com.companyname.progettoesame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968730547923-m26jjeefkf95d9co857kgh48ia3uv1d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzTUVWuZXTxY-lQGiJGLrgvDIC8cUtcII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968730547923-m26jjeefkf95d9co857kgh48ia3uv1d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
