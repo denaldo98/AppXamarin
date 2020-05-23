@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProgettoEsame"
+       x:Class="ProgettoEsame.HomePage">
+
+    <TabBar>
+        <Tab Title="To Do"
+             Icon="one.png">
+            <ShellContent>
+                <local:Page1/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Corsi"
+             Icon="two.png">
+            <ShellContent>
+                <local:Page1/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Orario"
+             Icon="three.png">
+            <ShellContent>
+                <local:Page1/>
+            </ShellContent>
+        </Tab>
+        <Tab Title="Appelli"
+             Icon="four.png">
+            <ShellContent>
+                <local:Page1/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>
