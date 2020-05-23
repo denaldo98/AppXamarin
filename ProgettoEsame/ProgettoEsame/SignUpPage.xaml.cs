@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 
 namespace ProgettoEsame
 {
-    [DesignTimeVisible(true)]
+  
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
@@ -26,26 +26,48 @@ namespace ProgettoEsame
         {
             string mail = txtMail.Text;
             string pass = txtPass.Text;
+            //string confpass = txtConfPass.Text;
+            //string nome = txtnome.Text;
+            //string cognome = txtCognome.Text;
 
-
-
-            //var fbLogin = DependencyService.Get<IFirebaseAuth>();
             string token = await auth.DoRegisterWithEP(mail, pass);
             //await DisplayAlert("ok", token, "OK");
-            if (token != "")
+            if (token != "") //registrazione OK
             {
+                await DisplayAlert("Success", "Registration completed", "OK");
                 await Navigation.PushAsync(new Page1());
                 Navigation.RemovePage(this);
             }
-            else
+            else //errore nella registrazione
             {
                 ShowError();
             }
         }
 
-        async private void ShowError()
+
+
+        /*async void BtnRegistra_Clicked((object sender, EventArgs e)
         {
-            await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
+            bool created = auth.DoRegisterWithEP(mail, pass);
+            if (created)
+            {
+                await DisplayAlert("Success", "Registration completed", "OK");
+                await Navigation.PushAsync(new Page1());
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                await DisplayAlert("Sign Up Failed", "Something went wrong. Try again!", "OK");
+            }
+        }*/
+
+
+
+
+
+        async private void ShowError() //inserire controlli
+        {
+            await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
 
         async void BtnToLogin_Clicked(object sender, EventArgs e)

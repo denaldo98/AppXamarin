@@ -18,8 +18,8 @@
         <Label Text="Accedi per continuare" FontSize="15" FontAttributes="none" Margin="5,10,0,0" TextColor="#000000"></Label>
         <Entry x:Name="txtMail" Placeholder="Email" Keyboard="Email"/>
         <Entry x:Name="txtPass" Placeholder="Password" IsPassword="True"/>
-        <Button x:Name="btnLogin" Text="Entra" Clicked="btnLogin_Clicked" BackgroundColor="#000000" TextColor="White"/>
-        <Button x:Name="btnRegister" Text="Nuoovo utente? Registrati" Clicked="btnRegister_Clicked" BackgroundColor="#FFFFFF"/>
+        <Button x:Name="btnLogin" Text="Entra" Clicked="BtnLogin_Clicked" BackgroundColor="#000000" TextColor="White"/>
+        <Button x:Name="btnRegister" Text="Nuoovo utente? Registrati" Clicked="Btn_ToRegister_Clicked" BackgroundColor="#FFFFFF"/>
     </StackLayout>
 
 

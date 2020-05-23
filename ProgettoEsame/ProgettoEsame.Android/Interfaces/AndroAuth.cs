@@ -11,14 +11,13 @@ namespace ProgettoEsame.Droid.Interfaces
 {
     public class AndroAuth : IFirebaseAuth
     {
-        public async Task<string> DoLoginWithEP(string E, string P)
+        public async Task<string> DoLoginWithEP(string E, string P)    //login con email e password
         {
             try
             {
                 var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(E,P);
                 var token = await user.User.GetIdTokenAsync(false);
                 return token.Token;
-
             }
             catch (FirebaseAuthInvalidUserException notFound)
             {
@@ -30,15 +29,14 @@ namespace ProgettoEsame.Droid.Interfaces
             }
             catch (Exception err)
             {
-
+     
                 //return err.Message;
                 return "";
-
             }
             
         }
 
-        public async Task<string> DoRegisterWithEP(string E, string P)
+        public async Task<string> DoRegisterWithEP(string E, string P)   //registrazione con email e password
         {
             try
             {
@@ -49,12 +47,24 @@ namespace ProgettoEsame.Droid.Interfaces
             }
             catch (Exception err)
             {
-
                 //return err.Message;
                 return "";
-
             }
 
         }
+
+        /*public bool DoRegisterWithEP(string E, string P)
+        {
+            try
+            {
+                var signUpTask = FirebaseAuth.Instance.CreateUserWithEmailAndPassword(email, password);
+
+                return signUpTask.Result != null;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }*/
     }
 }
