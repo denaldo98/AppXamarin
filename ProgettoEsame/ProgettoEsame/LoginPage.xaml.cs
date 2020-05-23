@@ -29,8 +29,11 @@ namespace ProgettoEsame
             //await DisplayAlert("ok",token,"OK");
             if(token != "")
             {
-                await Navigation.PushAsync(new Page1());
-                Navigation.RemovePage(this);
+                //await Navigation.PushAsync(new Page1());
+                //Navigation.RemovePage(this);
+               
+                Application.Current.MainPage = new HomePage();
+                
             }
             else
             {

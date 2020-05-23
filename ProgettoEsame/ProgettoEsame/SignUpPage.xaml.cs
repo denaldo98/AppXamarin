@@ -35,8 +35,9 @@ namespace ProgettoEsame
             if (token != "") //registrazione OK
             {
                 await DisplayAlert("Success", "Registration completed", "OK");
-                await Navigation.PushAsync(new Page1());
-                Navigation.RemovePage(this);
+                //await Navigation.PushAsync(new Page1());
+                //Navigation.RemovePage(this);
+                Application.Current.MainPage = new HomePage();
             }
             else //errore nella registrazione
             {
