@@ -12,7 +12,7 @@ namespace ProgettoEsame
             
             if(Application.Current.Properties.ContainsKey("logged")) //portare alla homepage
             {
-               // MainPage = new NavigationPage(new HomePage());
+               MainPage = new HomePage();
             }
             else //utente non loggato: portare alla pagina di login
             {
