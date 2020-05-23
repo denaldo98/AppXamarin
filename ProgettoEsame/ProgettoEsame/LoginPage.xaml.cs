@@ -9,46 +9,73 @@ using Xamarin.Forms;
 
 namespace ProgettoEsame
 {
-
+    [DesignTimeVisible(true)]
     public partial class LoginPage : ContentPage
     {
+        IFirebaseAuth auth;
         public LoginPage()
         {
             InitializeComponent();
+            auth = DependencyService.Get<IFirebaseAuth>();
         }
 
-        private async void btnLogin_Clicked(object sender, EventArgs e)
+        async void btnLogin_Clicked(object sender, EventArgs e)
         {
             string mail = txtMail.Text;
             string pass = txtPass.Text;
 
-            var fbLogin = DependencyService.Get<IFirebaseAuth>();
-            string token = await fbLogin.DoLoginWithEP(mail, pass);
-            await DisplayAlert("ok",token,"OK");
-        }
-
-        private async void btnRegister_Clicked(object sender, EventArgs e)
-        {
-            string mail = txtMail.Text;
-            string pass = txtPass.Text;
-            if (mail.Equals(null))
+            //var fbLogin = DependencyService.Get<IFirebaseAuth>();
+            string token = await auth.DoLoginWithEP(mail, pass);
+            //await DisplayAlert("ok",token,"OK");
+            if(token != "")
             {
-                await DisplayAlert("Attenzione", "Email non valida", "Ok");
-            }
-            else if (pass.Equals(null))
-            {
-                await DisplayAlert("Attenzione", "Password non valida", "Ok");
-            }
-            {
-
-                var fbLogin = DependencyService.Get<IFirebaseAuth>();
-                string token = await fbLogin.DoRegisterWithEP(mail, pass);
-                //await DisplayAlert("ok", token, "OK");
                 await Navigation.PushAsync(new Page1());
                 Navigation.RemovePage(this);
             }
+            else
+            {
+                ShowError();
+            }
 
         }
+
+        async private void ShowError()
+        {
+            await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
+        }
+
+
+
+        async void btnRegister_Clicked(object sender, EventArgs e)
+        {
+                await Navigation.PushAsync(new SignUpPage());
+                Navigation.RemovePage(this);
+        }
+
+
+
+
+        /*async void btnRegister_Clicked(object sender, EventArgs e)
+        {
+            string mail = txtMail.Text;
+            string pass = txtPass.Text;
+
+
+
+            //var fbLogin = DependencyService.Get<IFirebaseAuth>();
+            string token = await auth.DoRegisterWithEP(mail, pass);
+            //await DisplayAlert("ok", token, "OK");
+            if (token != "")
+            {
+                await Navigation.PushAsync(new Page1());
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                ShowError();
+            }
+        }*/
+
 
 
     }

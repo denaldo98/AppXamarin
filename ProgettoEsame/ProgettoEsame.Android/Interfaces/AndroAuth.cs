@@ -22,13 +22,17 @@ namespace ProgettoEsame.Droid.Interfaces
             }
             catch (FirebaseAuthInvalidUserException notFound)
             {
-                return notFound.Message;
+                //return notFound.Message;
+                notFound.PrintStackTrace();
+                return "";
+
 
             }
             catch (Exception err)
             {
 
-                return err.Message;
+                //return err.Message;
+                return "";
 
             }
             
@@ -46,7 +50,8 @@ namespace ProgettoEsame.Droid.Interfaces
             catch (Exception err)
             {
 
-                return err.Message;
+                //return err.Message;
+                return "";
 
             }
 

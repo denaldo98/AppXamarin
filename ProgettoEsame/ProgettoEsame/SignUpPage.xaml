@@ -16,8 +16,8 @@
             <Entry x:Name="txtMail" Placeholder="Email" Keyboard="Email"/>
             <Entry x:Name="txtPass" Placeholder="Password" IsPassword="True"/>
             <Entry x:Name="txtConfPass" Placeholder="Conferma Password" IsPassword="True"/>
-            <Button x:Name="btnRegistra" Text="Registrati"  BackgroundColor="#000000" TextColor="White"/>
-            <Button x:Name="btnToLogin" Text="Possiedi già un account? Login" BackgroundColor="#FFFFFF" Margin="0"/>
+            <Button x:Name="btnRegistra" Clicked="BtnRegistra_Clicked" Text="Registrati"  BackgroundColor="#000000" TextColor="White"/>
+            <Button x:Name="btnToLogin" Clicked="BtnToLogin_Clicked" Text="Possiedi già un account? Login" BackgroundColor="#FFFFFF" Margin="0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
