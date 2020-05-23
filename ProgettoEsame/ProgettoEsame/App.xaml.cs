@@ -16,7 +16,7 @@ namespace ProgettoEsame
             }
             else //utente non loggato: portare alla pagina di login
             {
-                MainPage = new LoginPage();
+                MainPage = new  NavigationPage( new LoginPage());
             }
             
         }

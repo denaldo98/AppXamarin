@@ -31,15 +31,23 @@ namespace ProgettoEsame
         {
             string mail = txtMail.Text;
             string pass = txtPass.Text;
+            if (mail.Equals(null))
+            {
+                await DisplayAlert("Attenzione", "Email non valida", "Ok");
+            }
+            else if (pass.Equals(null))
+            {
+                await DisplayAlert("Attenzione", "Password non valida", "Ok");
+            }
+            {
 
-            var fbLogin = DependencyService.Get<IFirebaseAuth>();
-            string token = await fbLogin.DoRegisterWithEP(mail, pass);
-            await DisplayAlert("ok", token, "OK");
-            
-           
-            
-       
-      
+                var fbLogin = DependencyService.Get<IFirebaseAuth>();
+                string token = await fbLogin.DoRegisterWithEP(mail, pass);
+                //await DisplayAlert("ok", token, "OK");
+                await Navigation.PushAsync(new Page1());
+                Navigation.RemovePage(this);
+            }
+
         }
 
 
