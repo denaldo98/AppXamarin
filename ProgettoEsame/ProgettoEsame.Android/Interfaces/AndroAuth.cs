@@ -53,18 +53,50 @@ namespace ProgettoEsame.Droid.Interfaces
 
         }
 
-        /*public bool DoRegisterWithEP(string E, string P)
+        public bool IsUserSigned()
+        {
+            var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
+            var signedIn = user != null;
+            return signedIn;
+        }
+
+        public async Task<bool> Logout()
         {
             try
             {
-                var signUpTask = FirebaseAuth.Instance.CreateUserWithEmailAndPassword(email, password);
-
-                return signUpTask.Result != null;
+                Firebase.Auth.FirebaseAuth.Instance.SignOut();
+                return true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 return false;
             }
-        }*/
+        }
+
+
+            public string GetUserId()
+            {
+                var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
+                return user.Uid;
+            }
+
+
+
+
+
+
+            /*public bool DoRegisterWithEP(string E, string P)
+            {
+                try
+                {
+                    var signUpTask = FirebaseAuth.Instance.CreateUserWithEmailAndPassword(email, password);
+
+                    return signUpTask.Result != null;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+            }*/
+        }
     }
-}
