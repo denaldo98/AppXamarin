@@ -43,26 +43,25 @@ namespace ProgettoEsame
 
         }
 
-        async private void ShowError() //inserire controlli su nome e password (la pass almeno di 6)
+        async private void ShowError()
         {
-            if(string.IsNullOrWhiteSpace(txtMail.Text) && string.IsNullOrWhiteSpace(txtPass.Text))
+            if (string.IsNullOrWhiteSpace(txtMail.Text) && string.IsNullOrWhiteSpace(txtPass.Text))
             {
                 await DisplayAlert("Authentication Failed", "Empty fields", "OK");
-            } else if (string.IsNullOrWhiteSpace(txtMail.Text))
+            }
+            else if (string.IsNullOrWhiteSpace(txtMail.Text))
             {
                 await DisplayAlert("Authentication Failed", "Please enter email!!", "OK");
-            } else if (string.IsNullOrEmpty(txtPass.Text))
+            }
+            else if (string.IsNullOrEmpty(txtPass.Text))
             {
                 await DisplayAlert("Authentication Failed", "Please enter password!!", "OK");
-            } else
+            }
+            else
             {
                 await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
             }
-
-            //await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
-
-
 
         async void Btn_ToRegister_Clicked(object sender, EventArgs e)
         {
