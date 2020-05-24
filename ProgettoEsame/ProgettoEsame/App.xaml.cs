@@ -10,7 +10,8 @@ namespace ProgettoEsame
         {
             InitializeComponent();
             
-            if(Application.Current.Properties.ContainsKey("logged")) //portare alla homepage
+            //if(Application.Current.Properties.ContainsKey("logged")) //portare alla homepage
+            if(Application.Current.Properties["logged"].Equals(true))
             {
                MainPage = new HomePage();
             }

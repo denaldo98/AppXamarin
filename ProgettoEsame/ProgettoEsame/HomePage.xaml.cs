@@ -15,7 +15,7 @@ namespace ProgettoEsame
         public HomePage()
         {
             InitializeComponent();
-            Application.Current.Properties["logged"] = true;
+            Application.Current.Properties["logged"] = false;
         }
     }
 }

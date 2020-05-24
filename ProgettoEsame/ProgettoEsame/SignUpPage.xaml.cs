@@ -15,11 +15,13 @@ namespace ProgettoEsame
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
+        
         IFirebaseAuth auth;
         public SignUpPage()
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuth>();
+            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
         }
 
         async void BtnRegistra_Clicked(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace ProgettoEsame
             //await DisplayAlert("ok", token, "OK");
             if (token != "") //registrazione OK
             {
-                await DisplayAlert("Success", "Registration completed", "OK");
+                await DisplayAlert("SignUp successfull", "Press OK to continue to Home Page", "OK");
                 //await Navigation.PushAsync(new Page1());
                 //Navigation.RemovePage(this);
                 Application.Current.MainPage = new HomePage();
@@ -68,7 +70,24 @@ namespace ProgettoEsame
 
         async private void ShowError() //inserire controlli
         {
-            await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
+            // Validations for email and password
+            if (string.IsNullOrWhiteSpace(txtMail.Text))
+            {
+                await DisplayAlert("SignUp failed", "Please enter email!", "OK");
+            }
+            else if (string.IsNullOrEmpty(txtPass.Text))
+            {
+                await DisplayAlert("SignUp failed", "Please enter password!!", "OK");
+            }
+            else if (txtPass.Text.Length < 6)
+            {
+                await DisplayAlert("SignUp failed", "Password too short, enter minimum 6 characters!", "OK");
+            } else
+            {
+                await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
+            }
+
+          
         }
 
         async void BtnToLogin_Clicked(object sender, EventArgs e)

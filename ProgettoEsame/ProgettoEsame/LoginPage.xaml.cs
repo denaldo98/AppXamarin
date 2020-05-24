@@ -17,6 +17,7 @@ namespace ProgettoEsame
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuth>();
+            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
         }
 
         async void BtnLogin_Clicked(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace ProgettoEsame
             {
                 //await Navigation.PushAsync(new Page1());
                 //Navigation.RemovePage(this);
-               
+                await DisplayAlert("Authentication successfull", "Press OK to continue to Home Page", "OK");
                 Application.Current.MainPage = new HomePage();
                 
             }
@@ -44,7 +45,21 @@ namespace ProgettoEsame
 
         async private void ShowError() //inserire controlli su nome e password (la pass almeno di 6)
         {
-            await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
+            if(string.IsNullOrWhiteSpace(txtMail.Text) && string.IsNullOrWhiteSpace(txtPass.Text))
+            {
+                await DisplayAlert("Authentication Failed", "Empty fields", "OK");
+            } else if (string.IsNullOrWhiteSpace(txtMail.Text))
+            {
+                await DisplayAlert("Authentication Failed", "Please enter email!!", "OK");
+            } else if (string.IsNullOrEmpty(txtPass.Text))
+            {
+                await DisplayAlert("Authentication Failed", "Please enter password!!", "OK");
+            } else
+            {
+                await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
+            }
+
+            //await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
 
 
