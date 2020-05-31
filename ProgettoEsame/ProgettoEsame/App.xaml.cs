@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ProgettoEsame.Interfaces;
+using ProgettoEsame.View;
 
 namespace ProgettoEsame
 {
@@ -9,8 +11,7 @@ namespace ProgettoEsame
         public App()
         {
             InitializeComponent();
-
-            if (Application.Current.Properties.ContainsKey("logged"))
+            if(Application.Current.Properties.ContainsKey("logged"))
             {
                 if (Application.Current.Properties["logged"].ToString().Equals("true"))
                 {
@@ -19,9 +20,9 @@ namespace ProgettoEsame
             }
             else //utente non loggato: portare alla pagina di login
             {
-                MainPage = new NavigationPage(new LoginPage());
+                MainPage = new NavigationPage(new LoginPage2());
             }
-            
+
         }
 
         protected override void OnStart()

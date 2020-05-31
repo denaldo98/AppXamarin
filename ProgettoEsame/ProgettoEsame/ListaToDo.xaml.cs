@@ -12,17 +12,26 @@ using Xamarin.Forms.Xaml;
 namespace ProgettoEsame
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : Shell
+    public partial class ListaToDo : ContentPage
     {
-        public HomePage()
+        public ListaToDo()
         {
-            
             InitializeComponent();
-            Application.Current.Properties["logged"] = "true";
-
         }
 
-       
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (!Auth.IsAuthenticated())
+            {
+                await Task.Delay(300);
+                await Navigation.PushAsync(new LoginPage());
+
+            }
+            
+
+        }
 
     }
 }

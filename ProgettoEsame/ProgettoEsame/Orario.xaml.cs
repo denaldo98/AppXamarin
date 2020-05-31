@@ -1,6 +1,4 @@
-﻿using ProgettoEsame.View;
-using ProgettoEsame.ViewModel.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace ProgettoEsame
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : Shell
+    public partial class Orario : TabbedPage
     {
-        public HomePage()
+        public Orario()
         {
-            
             InitializeComponent();
-            Application.Current.Properties["logged"] = "true";
-
+            Title = "Orario";
         }
-
-       
-
     }
 }

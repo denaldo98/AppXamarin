@@ -10,10 +10,10 @@ using Xamarin.Forms;
 namespace ProgettoEsame
 {
     [DesignTimeVisible(true)]
-    public partial class LoginPage : ContentPage
+    public partial class LoginPage2 : ContentPage
     {
         IFirebaseAuth auth;
-        public LoginPage()
+        public LoginPage2()
         {
             InitializeComponent();
             auth = DependencyService.Get<IFirebaseAuth>();
@@ -25,16 +25,16 @@ namespace ProgettoEsame
             string mail = txtMail.Text;
             string pass = txtPass.Text;
 
-         
+
             string token = await auth.DoLoginWithEP(mail, pass);
             //await DisplayAlert("ok",token,"OK");
-            if(token != "")
+            if (token != "")
             {
                 //await Navigation.PushAsync(new Page1());
                 //Navigation.RemovePage(this);
                 await DisplayAlert("Authentication successfull", "Press OK to continue to Home Page", "OK");
                 Application.Current.MainPage = new HomePage();
-                
+
             }
             else
             {
@@ -65,8 +65,8 @@ namespace ProgettoEsame
 
         async void Btn_ToRegister_Clicked(object sender, EventArgs e)
         {
-                await Navigation.PushAsync(new SignUpPage());
-                Navigation.RemovePage(this);
+            await Navigation.PushAsync(new SignUpPage());
+            Navigation.RemovePage(this);
         }
 
 

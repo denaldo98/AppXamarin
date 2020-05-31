@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 
 namespace ProgettoEsame
 {
-  
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
-        
+
         IFirebaseAuth auth;
         public SignUpPage()
         {
@@ -82,17 +82,18 @@ namespace ProgettoEsame
             else if (txtPass.Text.Length < 6)
             {
                 await DisplayAlert("SignUp failed", "Password too short, enter minimum 6 characters!", "OK");
-            } else
+            }
+            else
             {
                 await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
             }
 
-          
+
         }
 
         async void BtnToLogin_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new LoginPage2());
             Navigation.RemovePage(this);
         }
     }

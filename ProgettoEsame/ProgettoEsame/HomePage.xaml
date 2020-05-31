@@ -8,25 +8,25 @@
         <Tab Title="To Do"
              Icon="one.png">
             <ShellContent>
-                <local:Page1/>
+                <local:ListaToDo2/>
             </ShellContent>
         </Tab>
         <Tab Title="Corsi"
              Icon="two.png">
             <ShellContent>
-                <local:Page1/>
+                <local:ListaCorsi/>
             </ShellContent>
         </Tab>
         <Tab Title="Orario"
              Icon="three.png">
             <ShellContent>
-                <local:Page1/>
+                <local:Orario/>
             </ShellContent>
         </Tab>
         <Tab Title="Appelli"
              Icon="four.png">
             <ShellContent>
-                <local:Page1/>
+                <local:ListaAppelli/>
             </ShellContent>
         </Tab>
     </TabBar>
