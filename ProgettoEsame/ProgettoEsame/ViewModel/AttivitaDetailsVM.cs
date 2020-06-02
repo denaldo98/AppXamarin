@@ -81,17 +81,17 @@ namespace ProgettoEsame.ViewModel
             }
         }
 
-        private DateTime dateTo2;
-        public DateTime DateTo2
+        private DateTime dateTo;
+        public DateTime DateTo
         {
-            get { return dateTo2; }
+            get { return dateTo; }
             set
             {
-                if(dateTo2 != value)
+                if(dateTo != value)
                 {
-                    dateTo2 = value;
-                    Scadenza = dateTo2.ToString("dd-MM-yyyy");
-                    OnPropertyChanged("DateTo2");
+                    dateTo = value;
+                    Scadenza = dateTo.ToString("dd-MM-yyyy");
+                    OnPropertyChanged("DateTo");
                 }
                 
                 

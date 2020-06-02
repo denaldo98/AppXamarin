@@ -34,7 +34,7 @@ namespace ProgettoEsame.View
         void OnDateSelected(object sender, DateChangedEventArgs args)
         {
 
-            vm.DateTo2 = scadenza.Date;
+            vm.DateTo = scadenza.Date;
 
         }
     }
