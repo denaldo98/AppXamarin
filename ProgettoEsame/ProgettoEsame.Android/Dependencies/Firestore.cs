@@ -78,7 +78,7 @@ namespace ProgettoEsame.Droid.Dependencies
         {
             hasReadSubscriptions = false;
             var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("subscriptions");
-             var query = collection.WhereEqualTo("author", Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid);
+            var query = collection.WhereEqualTo("author", Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid);
             query.Get().AddOnCompleteListener(this);  //ritorna i documenti della collezione. Quando il metodo get è completato viene chiamato l'OnComplete
             //var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("subscriptions"); //per noi va bene così
             //collection.Get().AddOnCompleteListener(this);
@@ -126,8 +126,8 @@ namespace ProgettoEsame.Droid.Dependencies
             if (task.IsSuccessful)
             {
                 var documents = (QuerySnapshot)task.Result;  //bisognerebbe verificare che tipo di documento è
-                //var doc = documents.Documents[0]; //verificare il tipo di documento
-               
+                                                             //var doc = documents.Documents[0]; //verificare il tipo di documento
+
 
                 subscriptions.Clear();
                 foreach (var doc in documents.Documents)

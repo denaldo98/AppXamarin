@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ProgettoEsame.ViewModel"
+             mc:Ignorable="d"
+             x:Class="ProgettoEsame.View.AttivitaDetailsPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:AttivitaDetailsVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Update"
+                     BindingContext="{StaticResource vm}"
+                     Command="{Binding UpdateCommand}"
+                     CommandParameter="{Binding Name}"/>
+    </ContentPage.ToolbarItems>
+    
+    
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource vm}"
+                     Spacing="10" Margin="10,0" Padding="15" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <Entry Placeholder="Nome Attività" Margin="0,10,0,0"
+                   Text="{Binding Name, Mode=TwoWay}"/>
+
+            <Picker Title="--Priorità--" TitleColor="Red" HorizontalOptions="StartAndExpand" 
+                    ItemsSource="{Binding prioritaList}" 
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding SelectedPriorita}"/>
+            
+            <Label Text="{Binding Priority}" HorizontalOptions="Fill"/>
+
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="{Binding Scadenza}" HorizontalOptions="Start" Margin="4,10,0,0" ></Label>
+                <DatePicker x:Name="scadenza" Format="d" HorizontalOptions="EndAndExpand" FontAttributes="Italic" FlowDirection="MatchParent" Margin="0,0,20,0" DateSelected="OnDateSelected" ></DatePicker>
+            </StackLayout>
+            
+            <Entry Placeholder="Descrizione" HorizontalOptions="Fill"
+                   Text="{Binding Description, Mode=TwoWay}"/>
+            
+            <Button Text="Delete"
+                    Command="{Binding DeleteCommand}"
+                    Style="{StaticResource destructiveButton}"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

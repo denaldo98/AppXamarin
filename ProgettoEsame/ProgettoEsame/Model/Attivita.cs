@@ -4,12 +4,14 @@ using System.Text;
 
 namespace ProgettoEsame.Model
 {
-    class Attivita
+    public class Attivita
     {
         public string Id { get; set; }
        
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Priority { get; set; }
+        public string Scadenza { get; set; }
         public Attivita()
         {
         }

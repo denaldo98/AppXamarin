@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ProgettoEsame"
+             xmlns:local="clr-namespace:ProgettoEsame" xmlns:local1="clr-namespace:ProgettoEsame.View"
        x:Class="ProgettoEsame.HomePage">
 
     <TabBar>
         <Tab Title="To Do"
              Icon="one.png">
             <ShellContent>
-                <local:ListaToDo2/>
+                <local1:ToDoPage/>
             </ShellContent>
         </Tab>
         <Tab Title="Corsi"
@@ -26,7 +26,7 @@
         <Tab Title="Appelli"
              Icon="four.png">
             <ShellContent>
-                <local:ListaAppelli/>
+                <local1:SubscriptionsPage/>
             </ShellContent>
         </Tab>
     </TabBar>
