@@ -9,41 +9,26 @@ using Xamarin.Forms;
 
 namespace ProgettoEsame.ViewModel
 {
-    class AppelloDetailsVM : INotifyPropertyChanged
+    class CorsoDetailsVM : INotifyPropertyChanged
     {
 
 
-        private Appello appello;
+        private Corso corso;
 
-        public Appello Appello
+        public Corso Corso
         {
-            get { return appello; }
+            get { return corso; }
             set
             {
-                appello = value;
-                Name = appello.Name;
-                Date = appello.Date;
-                OnPropertyChanged("Appello");
+                corso = value;
+                Name = corso.Name;
+                NameProf = corso.NameProf;
+                EmailProf = corso.EmailProf;
+                NumCFU = corso.NumCFU;
+                OnPropertyChanged("Corso");
             }
         }
 
-        private DateTime dateTo;
-        public DateTime DateTo
-        {
-            get { return dateTo; }
-            set
-            {
-                if (dateTo != value)
-                {
-                    dateTo = value;
-                    Date = dateTo.ToString("dd-MM-yyyy");
-                    OnPropertyChanged("DateTo");
-                }
-
-
-            }
-
-        }
 
         private string name;
 
@@ -53,22 +38,48 @@ namespace ProgettoEsame.ViewModel
             set
             {
                 name = value;
-                Appello.Name = name;
+                Corso.Name = name;
                 OnPropertyChanged("Name");
-                OnPropertyChanged("Appello");
+                OnPropertyChanged("Corso");
             }
         }
 
-        private string date;
-        public string Date
+        private string nameProf;
+        public string NameProf
         {
-            get { return date; }
+            get { return nameProf; }
             set
             {
-                date = value;
-                Appello.Date = date;
-                OnPropertyChanged("Date");
-                OnPropertyChanged("Appello");
+                nameProf = value;
+                Corso.NameProf = nameProf;
+                OnPropertyChanged("NameProf");
+                OnPropertyChanged("Corso");
+            }
+        }
+
+        private string emailProf;
+        public string EmailProf
+        {
+            get { return emailProf; }
+            set
+            {
+                emailProf = value;
+                Corso.EmailProf = emailProf;
+                OnPropertyChanged("EmailProf");
+                OnPropertyChanged("Corso");
+            }
+        }
+
+        private int numCFU;
+        public int NumCFU
+        {
+            get { return numCFU; }
+            set
+            {
+                numCFU = value;
+                Corso.NumCFU = numCFU;
+                OnPropertyChanged("NumCFU");
+                OnPropertyChanged("Corso");
             }
         }
 
@@ -78,7 +89,7 @@ namespace ProgettoEsame.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public AppelloDetailsVM()
+        public CorsoDetailsVM()
         {
             UpdateCommand = new Command(Update, UpdateCanExecute);
             DeleteCommand = new Command(Delete);
@@ -91,7 +102,7 @@ namespace ProgettoEsame.ViewModel
 
         private async void Update(object parameter)
         {
-            bool result = await DatabaseAppelliHelper.UpdateAppello(Appello);
+            bool result = await DatabaseCorsiHelper.UpdateCorso(Corso);
             if (result)
                 await App.Current.MainPage.Navigation.PopAsync();
             else
@@ -100,7 +111,7 @@ namespace ProgettoEsame.ViewModel
 
         private async void Delete(object parameter)
         {
-            bool result = await DatabaseAppelliHelper.DeleteAppello(Appello);
+            bool result = await DatabaseCorsiHelper.DeleteCorso(Corso);
 
             if (result)
                 await App.Current.MainPage.Navigation.PopAsync();

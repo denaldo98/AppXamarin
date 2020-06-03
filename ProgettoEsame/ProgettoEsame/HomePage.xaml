@@ -14,7 +14,7 @@
         <Tab Title="Corsi"
              Icon="two.png">
             <ShellContent>
-                <local:ListaCorsi/>
+                <local1:CorsiPage/>
             </ShellContent>
         </Tab>
         <Tab Title="Orario"
