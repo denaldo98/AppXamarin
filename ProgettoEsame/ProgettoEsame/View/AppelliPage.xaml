@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ProgettoEsame.ViewModel"
+             mc:Ignorable="d"
+             x:Class="ProgettoEsame.View.AppelliPage">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:AppelloVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>10,20,10,5</OnPlatform.iOS>
+            <OnPlatform.WinPhone>10,0,10,5</OnPlatform.WinPhone>
+            <OnPlatform.Android>0,0,0,5</OnPlatform.Android>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+
+
+    <ContentPage.Content>
+        <ListView BindingContext="{StaticResource vm}" 
+                  RowHeight="70" 
+                  BackgroundColor="LightBlue"
+                  ItemsSource="{Binding Appelli}"
+                  SelectedItem="{Binding SelectedAppello, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
+                                <Label HorizontalOptions="Start" FontSize="30" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
+                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding Date}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

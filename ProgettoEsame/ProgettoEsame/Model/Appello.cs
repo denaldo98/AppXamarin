@@ -4,11 +4,13 @@ using System.Text;
 
 namespace ProgettoEsame.Model
 {
-    class Appello
+    public class Appello
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        
+
+        public string Date { get; set; }
+
         public Appello()
         {
         }
