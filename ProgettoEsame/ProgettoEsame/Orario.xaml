@@ -2,11 +2,11 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:progettoesame="clr-namespace:ProgettoEsame"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:progettoesame="clr-namespace:ProgettoEsame" xmlns:progettoesame1="clr-namespace:ProgettoEsame.View"
             mc:Ignorable="d"
              x:Class="ProgettoEsame.Orario">
     <!--Pages can be added as references or inline-->
-    <progettoesame:Page1 Title="Lun" />
+    <progettoesame1:LunediPage Title="Lun" />
     <progettoesame:ListaToDo Title="Mar" />
     <progettoesame:ListaToDo2 Title="Mer" />
     <ContentPage Title="Gio" />

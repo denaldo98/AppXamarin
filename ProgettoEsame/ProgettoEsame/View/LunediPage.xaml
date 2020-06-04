@@ -5,18 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ProgettoEsame.ViewModel"
              mc:Ignorable="d"
-             x:Class="ProgettoEsame.View.ToDoPage">
+             x:Class="ProgettoEsame.View.LunediPage">
 
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <vm:AttivitaVM x:Key="vm"/>
+            <vm:LunediVM x:Key="vm"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"
                      Clicked="ToolbarItem_Clicked"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -29,23 +29,24 @@
 
 
     <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
         <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="80" 
+                  RowHeight="70" 
                   BackgroundColor="LightBlue"
-                  ItemsSource="{Binding Activities}"
-                  SelectedItem="{Binding SelectedAttivita, Mode=TwoWay}">
+                  ItemsSource="{Binding LunediColl}"
+                  SelectedItem="{Binding SelectedLunedi, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
 
                     <ViewCell>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
-                                <Label HorizontalOptions="Start" FontSize="25" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                                <Label HorizontalOptions="Start" FontSize="14"  TextColor="Black" Text="{Binding Description}"/>
+                                    <Label HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                                    <Label HorizontalOptions="Start" FontSize="14" TextColor="Black" Text="{Binding Luogo}"/>
                             </StackLayout>
                             <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
-                                <Label Text="{Binding Priority}" HorizontalOptions="FillAndExpand" IsVisible="true" />
-                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding Scadenza}"/>
+                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding OraI}"/>
+                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding OraF}"/>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
@@ -53,5 +54,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        </ContentPage.Content>
+            <Button Text="Add" Clicked="ToolbarItem_Clicked"/>
+        </StackLayout>
+       
+    </ContentPage.Content>
 </ContentPage>
