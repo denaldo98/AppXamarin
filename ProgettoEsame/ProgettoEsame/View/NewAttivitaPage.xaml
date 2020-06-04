@@ -28,7 +28,7 @@
     
     <ContentPage.Content>
         <StackLayout BindingContext="{StaticResource vm}"
-                     Spacing="10" Margin="10,0" Padding="15" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                     Spacing="10" Margin="10,0" Padding="10" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <Entry Placeholder="Nome Attività" Margin="0,10,0,0"
                    Text="{Binding Name, Mode=TwoWay}"/>
             
