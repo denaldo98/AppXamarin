@@ -132,14 +132,14 @@ namespace ProgettoEsame.Droid.Dependencies
                         nameProf = doc.Get("nameProf").ToString();
                     }
 
-                    int numCFU;
+                    string numCFU;
                     if (doc.Get("numCFU") == null)
                     {
-                        numCFU = 0;
+                        numCFU = "";
                     }
                     else
                     {
-                        numCFU = Integer.ParseInt(doc.Get("numCFU").ToString());
+                        numCFU = doc.Get("numCFU").ToString();
                     }
                     string emailProf;
                     if (doc.Get("emailProf") == null)

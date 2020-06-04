@@ -26,7 +26,7 @@
             <Entry Placeholder="Nome Professore" Margin="0,10,0,0"
                    Text="{Binding NameProf, Mode=TwoWay}"/>
             <Entry Placeholder="Email Professore" Margin="0,10,0,0"
-                   Text="{Binding EmaileProf, Mode=TwoWay}"/>
+                   Text="{Binding EmailProf, Mode=TwoWay}"/>
             <Entry Placeholder="Numero CFU" Margin="0,10,0,0" Keyboard="Numeric"
                    Text="{Binding NumCFU, Mode=TwoWay}"/>
 

@@ -53,8 +53,8 @@ namespace ProgettoEsame.ViewModel
             }
         }
 
-        private int numCFU;
-        public int NumCFU
+        private string numCFU;
+        public string NumCFU
         {
             get
             {

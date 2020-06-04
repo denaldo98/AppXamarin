@@ -11,7 +11,7 @@ namespace ProgettoEsame.Model
 
         public string NameProf { get; set; }
 
-        public int NumCFU { get; set; }
+        public string NumCFU { get; set; }
 
         public string EmailProf { get; set; }
 
