@@ -22,7 +22,7 @@ namespace ProgettoEsame.ViewModel
                 selectedCorso = value;
                 OnPropertyChanged("SelectedCorso");
                 if (selectedCorso != null)
-                    App.Current.MainPage.Navigation.PushAsync(new CorsoDetailsPage(selectedCorso));
+                    App.Current.MainPage.Navigation.PushAsync(new CorsoDetailsPage2(selectedCorso));
             }
         }
 
