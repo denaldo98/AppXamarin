@@ -51,7 +51,7 @@ namespace ProgettoEsame.ViewModel
             get { return description; }
             set
             {
-                name = value;
+                description = value;
                 Appunto.Description = description;
                 OnPropertyChanged("Description");
                 OnPropertyChanged("Appunto");

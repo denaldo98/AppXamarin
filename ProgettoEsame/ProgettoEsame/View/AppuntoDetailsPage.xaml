@@ -31,7 +31,6 @@
                     Command="{Binding DeleteCommand}"
                     Style="{StaticResource destructiveButton}"/>
 
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
