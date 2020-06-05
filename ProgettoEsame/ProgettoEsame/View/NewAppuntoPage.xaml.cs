@@ -23,6 +23,7 @@ namespace ProgettoEsame.View
         public NewAppuntoPage(string id)
         {
             InitializeComponent();
+            Title = "Inserimento Appunto";
             vm = Resources["vm"] as NewAppuntoVM;
             vm.IdCorso = id;
         }

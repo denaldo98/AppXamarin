@@ -18,6 +18,7 @@ namespace ProgettoEsame.View
         public AttivitaDetailsPage()
         {
             InitializeComponent();
+            
 
             vm = Resources["vm"] as AttivitaDetailsVM;
         }
@@ -25,6 +26,7 @@ namespace ProgettoEsame.View
         public AttivitaDetailsPage(Attivita selectedAttivita)
         {
             InitializeComponent();
+            Title = "Modifica Attività";
 
             vm = Resources["vm"] as AttivitaDetailsVM;
             vm.Attivita = selectedAttivita;

@@ -18,6 +18,7 @@ namespace ProgettoEsame.View
         public AppelliPage()
         {
             InitializeComponent();
+            Title = "Appelli";
 
             vm = Resources["vm"] as AppelloVM; //accedo alla risorsa tramite chiave
         }

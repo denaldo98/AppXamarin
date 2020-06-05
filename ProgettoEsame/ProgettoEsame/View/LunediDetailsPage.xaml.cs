@@ -26,6 +26,7 @@ namespace ProgettoEsame.View
         public LunediDetailsPage(Lunedi selectedLunedi)
         {
             InitializeComponent();
+            Title = "Modifica Evento";
 
             vm = Resources["vm"] as LunediDetailsVM;
             vm.Lunedi = selectedLunedi;

@@ -28,7 +28,7 @@ namespace ProgettoEsame.View
         public CorsoDetailsPage2(Corso selectedCorso)
         {
             InitializeComponent();
-
+            Title = "Visualizzazione corso";
             vm = Resources["vm"] as CorsoDetailsVM2;
             vm.Corso = selectedCorso;
             corso = selectedCorso;

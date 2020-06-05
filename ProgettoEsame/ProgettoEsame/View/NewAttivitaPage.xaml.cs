@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewAttivitaPage()
         {
             InitializeComponent();
+            Title = "Inserimento Attività";
             scadenza.MinimumDate = DateTime.Today;
         }
     }

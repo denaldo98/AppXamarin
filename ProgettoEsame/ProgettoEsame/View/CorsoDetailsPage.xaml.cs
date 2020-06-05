@@ -18,6 +18,7 @@ namespace ProgettoEsame.View
         public CorsoDetailsPage()
         {
             InitializeComponent();
+            
 
             vm = Resources["vm"] as CorsoDetailsVM;
         }
@@ -25,7 +26,7 @@ namespace ProgettoEsame.View
         public CorsoDetailsPage(Corso selectedCorso)
         {
             InitializeComponent();
-
+            Title = "Modifica Corso";
             vm = Resources["vm"] as CorsoDetailsVM;
             vm.Corso = selectedCorso;
 

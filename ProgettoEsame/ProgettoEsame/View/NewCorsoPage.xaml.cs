@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewCorsoPage()
         {
             InitializeComponent();
+            Title = "Inserimento Corso";
         }
     }
 }

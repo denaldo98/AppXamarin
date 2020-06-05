@@ -18,13 +18,14 @@ namespace ProgettoEsame.View
         public AppuntoDetailsPage()
         {
             InitializeComponent();
+            
             vm = Resources["vm"] as AppuntoDetailsVM;
         }
        
         public AppuntoDetailsPage(Appunto selectedAppunto)
         {
             InitializeComponent();
-
+            Title = "Visualizza appunto";
             vm = Resources["vm"] as AppuntoDetailsVM;
             vm.Appunto = selectedAppunto;
 

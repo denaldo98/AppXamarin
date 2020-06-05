@@ -18,6 +18,7 @@ namespace ProgettoEsame.View
         public AppelloDetailsPage()
         {
             InitializeComponent();
+            
 
             vm = Resources["vm"] as AppelloDetailsVM;
         }
@@ -25,6 +26,7 @@ namespace ProgettoEsame.View
         public AppelloDetailsPage(Appello selectedAppello)
         {
             InitializeComponent();
+            Title = "Modifica Appello";
 
             vm = Resources["vm"] as AppelloDetailsVM;
             vm.Appello = selectedAppello;

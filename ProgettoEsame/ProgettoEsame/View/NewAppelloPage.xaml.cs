@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewAppelloPage()
         {
             InitializeComponent();
+            Title = "Inserimento Appello";
             date.MinimumDate = DateTime.Today;
         }
     }

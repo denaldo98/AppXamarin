@@ -18,6 +18,7 @@ namespace ProgettoEsame.View
         public CorsiPage()
         {
             InitializeComponent();
+            Title = "Corsi";
 
             vm = Resources["vm"] as CorsoVM; //accedo alla risorsa tramite chiave
         }
