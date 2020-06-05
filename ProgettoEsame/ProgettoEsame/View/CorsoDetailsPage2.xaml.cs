@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
     public partial class CorsoDetailsPage2 : ContentPage
     {
         String idcorso;
+        Corso corso;
         CorsoDetailsVM2 vm;
         public CorsoDetailsPage2()
         {
@@ -30,6 +31,7 @@ namespace ProgettoEsame.View
 
             vm = Resources["vm"] as CorsoDetailsVM2;
             vm.Corso = selectedCorso;
+            corso = selectedCorso;
             idcorso = selectedCorso.Id;
 
         }
@@ -43,6 +45,11 @@ namespace ProgettoEsame.View
         void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new NewAppuntoPage(idcorso));
+        }
+
+        void DettaglioCorsoClicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CorsoDetailsPage(corso));
         }
 
     }

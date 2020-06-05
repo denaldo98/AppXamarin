@@ -31,7 +31,7 @@
                    Text="{Binding EmailProf, Mode=TwoWay}"/>
             <Label Margin="0,10,0,0" 
                    Text="{Binding NumCFU, Mode=TwoWay}"/>
-
+                <Button Text="Modifica Corso" Clicked="DettaglioCorsoClicked"/>
             </StackLayout>
 
             <ListView BindingContext="{StaticResource vm}" 

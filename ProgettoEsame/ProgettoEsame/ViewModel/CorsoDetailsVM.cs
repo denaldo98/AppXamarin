@@ -1,4 +1,5 @@
 ﻿using ProgettoEsame.Model;
+using ProgettoEsame.View;
 using ProgettoEsame.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
@@ -103,8 +104,13 @@ namespace ProgettoEsame.ViewModel
         private async void Update(object parameter)
         {
             bool result = await DatabaseCorsiHelper.UpdateCorso(Corso);
-            if (result)
-                await App.Current.MainPage.Navigation.PopAsync();
+            if (result) {
+
+                /*await App.Current.MainPage.Navigation.PopAsync();
+                await App.Current.MainPage.Navigation.PopAsync();*/
+                await App.Current.MainPage.Navigation.PopToRootAsync();
+            }
+
             else
                 await App.Current.MainPage.DisplayAlert("Error", "There was an error, please try again", "Ok");
         }
@@ -114,7 +120,12 @@ namespace ProgettoEsame.ViewModel
             bool result = await DatabaseCorsiHelper.DeleteCorso(Corso);
 
             if (result)
-                await App.Current.MainPage.Navigation.PopAsync();
+            {
+                /*await App.Current.MainPage.Navigation.PopAsync();
+                 await App.Current.MainPage.Navigation.PopAsync();*/
+                await App.Current.MainPage.Navigation.PopToRootAsync();
+
+            }
             else
                 await App.Current.MainPage.DisplayAlert("Error", "There was an error, please try again", "Ok");
         }
