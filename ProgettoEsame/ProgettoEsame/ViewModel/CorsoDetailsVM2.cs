@@ -23,7 +23,7 @@ namespace ProgettoEsame.ViewModel
             {
                 selectedAppunto = value;
                 OnPropertyChanged("SelectedAppunto");
-                if (selectedAppunto != null) ;
+                if (selectedAppunto != null) 
                     App.Current.MainPage.Navigation.PushAsync(new AppuntoDetailsPage(selectedAppunto));
             }
         }

@@ -21,8 +21,8 @@
 
     <ContentPage.Content>
         <StackLayout BindingContext="{StaticResource vm}"
-                     Spacing="10" Margin="10,0" Padding="15" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout>
+                     Spacing="10"   Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Margin="10,0">
             <Label Margin="0,10,0,0"
                    Text="{Binding Name, Mode=TwoWay}"/>
             <Label  Margin="0,10,0,0"
