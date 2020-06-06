@@ -20,9 +20,7 @@ namespace ProgettoEsame
 
             ToolbarItem item = new ToolbarItem
             {
-                Text = "Item",
-                //IconImageSource = ImageSource.FromFile("iconasettings.png"),
-                IconImageSource = "iconasettings.png",
+                Text = "Item",   
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 0
             };

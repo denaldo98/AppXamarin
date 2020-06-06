@@ -29,7 +29,14 @@
 
 
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <ScrollView Grid.Row="0">
+         <StackLayout Orientation="Vertical">
         <ListView BindingContext="{StaticResource vm}" 
                   RowHeight="70" 
                   BackgroundColor="LightBlue"
@@ -54,8 +61,23 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-            <Button Text="Add" Clicked="ToolbarItem_Clicked"/>
+            <!--<Button Text="Add" Clicked="ToolbarItem_Clicked"/>-->
+            
         </StackLayout>
-       
+            </ScrollView>
+            <!--<ImageButton Source="plus_icon5.png" 
+             Grid.Row="0"            
+            BackgroundColor="Transparent"
+            HorizontalOptions="End"  WidthRequest="160" HeightRequest="100" Margin="0,0,-20,15" VerticalOptions="End"
+            Clicked="ToolbarItem_Clicked"/>-->
+            <Button
+             Grid.Row="0"
+                Text="+" FontSize="35"
+                BorderColor="#2b3c3c" BorderWidth="1"  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="70" HeightRequest="70" Margin="0,0,20,22" VerticalOptions="End"
+          
+            Clicked="ToolbarItem_Clicked"/>
+
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
