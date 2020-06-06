@@ -111,7 +111,7 @@ namespace ProgettoEsame.ViewModel
 
         private void SaveLunedi(object obj)
         {
-            bool result = DatabaseLunediHelper.InsertLunedi(new Model.Lunedi
+            bool result = DatabaseLunediHelper.InsertLunedi(new Model.Evento
             {
 
                 Name = Name,

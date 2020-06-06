@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ProgettoEsame" xmlns:local1="clr-namespace:ProgettoEsame.View"
        x:Class="ProgettoEsame.HomePage">
 
+    
     <TabBar>
         <Tab Title="To Do"
              Icon="one.png">

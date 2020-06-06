@@ -12,9 +12,9 @@ namespace ProgettoEsame.ViewModel
     public class LunediVM : INotifyPropertyChanged
     {
 
-        private Lunedi selectedLunedi;
+        private Evento selectedLunedi;
 
-        public Lunedi SelectedLunedi
+        public Evento SelectedLunedi
         {
             get { return selectedLunedi; }
             set
@@ -27,12 +27,12 @@ namespace ProgettoEsame.ViewModel
         }
 
 
-        public ObservableCollection<Lunedi> LunediColl { get; set; }
+        public ObservableCollection<Evento> LunediColl { get; set; }
 
         public LunediVM()
         {
 
-            LunediColl = new ObservableCollection<Lunedi>();
+            LunediColl = new ObservableCollection<Evento>();
 
         }
 

@@ -26,7 +26,7 @@ namespace ProgettoEsame
             if (!Auth.IsAuthenticated())
             {
                 await Task.Delay(300);
-                await Navigation.PushAsync(new LoginPage());
+                await Navigation.PushAsync(new LoginPage2());
 
             }
             

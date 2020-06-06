@@ -37,9 +37,8 @@ namespace ProgettoEsame
             if (token != "") //registrazione OK
             {
                 await DisplayAlert("SignUp successfull", "Press OK to continue to Home Page", "OK");
-                //await Navigation.PushAsync(new Page1());
-                //Navigation.RemovePage(this);
-                Application.Current.MainPage = new HomePage();
+            
+                App.Current.MainPage = new HomePage();
             }
             else //errore nella registrazione
             {
@@ -49,24 +48,7 @@ namespace ProgettoEsame
 
 
 
-        /*async void BtnRegistra_Clicked((object sender, EventArgs e)
-        {
-            bool created = auth.DoRegisterWithEP(mail, pass);
-            if (created)
-            {
-                await DisplayAlert("Success", "Registration completed", "OK");
-                await Navigation.PushAsync(new Page1());
-                Navigation.RemovePage(this);
-            }
-            else
-            {
-                await DisplayAlert("Sign Up Failed", "Something went wrong. Try again!", "OK");
-            }
-        }*/
-
-
-
-
+        
 
         async private void ShowError() //inserire controlli
         {
@@ -93,8 +75,10 @@ namespace ProgettoEsame
 
         async void BtnToLogin_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage2());
-            Navigation.RemovePage(this);
+            //await Navigation.PushAsync(new LoginPage2());
+            //Navigation.RemovePage(this);
+           App.Current.MainPage = new LoginPage2();
+            
         }
     }
 }

@@ -25,17 +25,17 @@ namespace ProgettoEsame.Droid.Dependencies
     class FirestoreLunedi : Java.Lang.Object, ViewModel.Helpers.LunediFirestore, IOnCompleteListener
     {
 
-        List<Lunedi> lunediList;
+        List<Evento> lunediList;
         bool hasReadLunedi = false;
 
         public FirestoreLunedi()
         {
-            lunediList = new List<Lunedi>();
+            lunediList = new List<Evento>();
         }
 
 
 
-        public async Task<bool> DeleteLunedi(Lunedi lunedi)
+        public async Task<bool> DeleteLunedi(Evento lunedi)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace ProgettoEsame.Droid.Dependencies
             }
         }
 
-        public bool InsertLunedi(Lunedi lunedi)
+        public bool InsertLunedi(Evento lunedi)
         {
 
             try
@@ -74,7 +74,7 @@ namespace ProgettoEsame.Droid.Dependencies
 
         }
 
-        public async Task<IList<Lunedi>> ReadLunedi()
+        public async Task<IList<Evento>> ReadLunedi()
         {
             hasReadLunedi = false;
             var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("users").Document(Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid).Collection("Lunedi");
@@ -94,7 +94,7 @@ namespace ProgettoEsame.Droid.Dependencies
 
         }
 
-        public async Task<bool> UpdateLunedi(Lunedi lunedi)
+        public async Task<bool> UpdateLunedi(Evento lunedi)
         {
             try
             {
@@ -145,7 +145,7 @@ namespace ProgettoEsame.Droid.Dependencies
                     {
                         oraF = doc.Get("ora fine").ToString();
                     }
-                    Lunedi lunedi = new Lunedi
+                    Evento lunedi = new Evento
                     {
                         Name = doc.Get("nome").ToString(),
                         Luogo = luogo,

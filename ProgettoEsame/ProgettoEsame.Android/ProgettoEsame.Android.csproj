@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dependencies\Auth.cs" />
-    <Compile Include="Dependencies\Firestore.cs" />
     <Compile Include="Dependencies\FirestoreAppelli.cs" />
     <Compile Include="Dependencies\FirestoreAppunti.cs" />
     <Compile Include="Dependencies\FirestoreCorsi.cs" />

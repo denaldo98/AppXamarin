@@ -30,10 +30,9 @@ namespace ProgettoEsame
             //await DisplayAlert("ok",token,"OK");
             if (token != "")
             {
-                //await Navigation.PushAsync(new Page1());
-                //Navigation.RemovePage(this);
+                
                 await DisplayAlert("Authentication successfull", "Press OK to continue to Home Page", "OK");
-                Application.Current.MainPage = new HomePage();
+                App.Current.MainPage = new HomePage();
 
             }
             else
@@ -65,8 +64,10 @@ namespace ProgettoEsame
 
         async void Btn_ToRegister_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SignUpPage());
-            Navigation.RemovePage(this);
+            //await Navigation.PushAsync(new SignUpPage());
+            //Navigation.RemovePage(this);
+            App.Current.MainPage = new SignUpPage();
+            
         }
 
 

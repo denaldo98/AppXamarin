@@ -13,9 +13,9 @@ namespace ProgettoEsame.ViewModel
     {
 
 
-        private Lunedi lunedi;
+        private Evento lunedi;
 
-        public Lunedi Lunedi
+        public Evento Lunedi
         {
             get { return lunedi; }
             set
@@ -25,7 +25,7 @@ namespace ProgettoEsame.ViewModel
                 Luogo = lunedi.Luogo;
                 OraI = lunedi.OraI;
                 OraF = lunedi.OraF;
-                OnPropertyChanged("Lunedi");
+                OnPropertyChanged("Evento");
             }
         }
 
@@ -77,7 +77,7 @@ namespace ProgettoEsame.ViewModel
                 name = value;
                 Lunedi.Name = name;
                 OnPropertyChanged("Name");
-                OnPropertyChanged("Lunedi");
+                OnPropertyChanged("Evento");
             }
         }
 
@@ -91,7 +91,7 @@ namespace ProgettoEsame.ViewModel
                 luogo = value;
                 Lunedi.Luogo = luogo;
                 OnPropertyChanged("Luogo");
-                OnPropertyChanged("Lunedi");
+                OnPropertyChanged("Evento");
             }
         }
 
@@ -105,7 +105,7 @@ namespace ProgettoEsame.ViewModel
                 oraI = value;
                 lunedi.OraI = oraI;
                 OnPropertyChanged("OraI");
-                OnPropertyChanged("Lunedi");
+                OnPropertyChanged("Evento");
             }
         }
 
@@ -118,7 +118,7 @@ namespace ProgettoEsame.ViewModel
                 oraF = value;
                 lunedi.OraF = oraF;
                 OnPropertyChanged("OraF");
-                OnPropertyChanged("Lunedi");
+                OnPropertyChanged("Evento");
             }
         }
 

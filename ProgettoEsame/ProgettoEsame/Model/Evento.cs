@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProgettoEsame.Model
 {
-    public class Lunedi { 
+    public class Evento { 
 
         public string Id { get; set; }
 
@@ -12,7 +12,7 @@ namespace ProgettoEsame.Model
         public string Luogo { get; set; }
         public string OraI { get; set; }
         public string OraF { get; set; }
-        public Lunedi()
+        public Evento()
         {
         }
     }
