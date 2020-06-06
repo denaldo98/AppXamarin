@@ -21,7 +21,8 @@ namespace ProgettoEsame
             ToolbarItem item = new ToolbarItem
             {
                 Text = "Item",
-                IconImageSource = ImageSource.FromFile("example_icon.png"),
+                //IconImageSource = ImageSource.FromFile("iconasettings.png"),
+                IconImageSource = "iconasettings.png",
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 0
             };
@@ -77,9 +78,12 @@ namespace ProgettoEsame
                 bool logout  = await auth.Logout();
                 if (logout)
                 {
-                    Application.Current.Properties["logged"] = null;
+                    Application.Current.Properties["logged"] = "false";
+                    await Application.Current.SavePropertiesAsync();
+
+                    //Application.Current.Properties.Clear();
                     await DisplayAlert("Attenzione!", "Il logout è stato eseguito, l'app verrà chiusa!", "Ok");
-                    await System.Threading.Tasks.Task.Delay(500);
+                    await System.Threading.Tasks.Task.Delay(1000);
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
 
                 }

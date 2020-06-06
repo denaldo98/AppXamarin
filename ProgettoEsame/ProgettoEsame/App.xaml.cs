@@ -13,13 +13,14 @@ namespace ProgettoEsame
             InitializeComponent();
             if(Application.Current.Properties.ContainsKey("logged"))
             {
-                if (Application.Current.Properties["logged"] == null)
+                if (Application.Current.Properties["logged"].ToString().Equals("true"))
+                {
+                    MainPage = new HomePage();
+                }
+                else
                 {
                     //MainPage = new NavigationPage(new LoginPage2());
                     MainPage = new LoginPage2();
-                }else if (Application.Current.Properties["logged"].ToString().Equals("true"))
-                {
-                    MainPage = new HomePage();
                 }
             }
             else //utente non loggato: portare alla pagina di login
