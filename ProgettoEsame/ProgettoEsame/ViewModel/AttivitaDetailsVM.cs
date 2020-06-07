@@ -34,59 +34,47 @@ namespace ProgettoEsame.ViewModel
         {
             get { return selectedPriorita; }
             set
-            {
-                if (selectedPriorita != value)
-                {
+            {     
                     selectedPriorita = value;
-                   
-                    Priority = selectedPriorita.Value;
-
-                    
-
+                
+                    Source = selectedPriorita.Value;
                     //Do whatever functionality you want when a selectedItem is Changed
-
-                }
+                
             }
         }
 
-
-
-        private string priority;
-        public string Priority
-        {
-            get { return priority; }
-            set
-            {
-                if (priority != value)
-                {
-                    if (string.Equals(value, "Bassa"))
-                    {
-                        Source = "verde.png";
-                    }
-                    else if (string.Equals(value, "Alta"))
-                    {
-                        Source = "rosso.png";
-                    }
-                    else Source = "giallo.png";
-
-                    priority = value;
-                    OnPropertyChanged("Priority");
-                    //OnPropertyChanged("Attivita");
-                }
-            }
-        }
 
 
         private string source;
         public string Source
         {
             get { return source; }
-            set { 
-                source = value;
+            set
+            {
+
+                if (string.Equals(value, "Bassa"))
+                {
+                    source = "verde.png";
+                }
+                else if (string.Equals(value, "Alta"))
+                {
+                    source = "rosso.png";
+                }
+                else if (string.Equals(value, "Media"))
+                {
+                    source = "giallo.png";
+                }
+                else source = value;
+                    
                 Attivita.Source = source;
+                OnPropertyChanged("Source");
                 OnPropertyChanged("Attivita");
+
             }
         }
+
+
+        
 
 
         private string scadenza;
@@ -140,16 +128,6 @@ namespace ProgettoEsame.ViewModel
                 Name = attivita.Name;
                 Description = attivita.Description;
                 Source = attivita.Source;
-                if(string.Equals(Source, "verde.png"))
-                {
-                    Priority = "bassa";
-                } else if(string.Equals(source, "giallo.png"))
-                {
-                    Priority = "media";
-                } else if(string.Equals(source, "rosso.png"))
-                {
-                    Priority = "alta";
-                }
                 Scadenza = attivita.Scadenza;
                 OnPropertyChanged("Attivita");
             }

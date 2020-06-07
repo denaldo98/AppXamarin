@@ -56,51 +56,44 @@ namespace ProgettoEsame.ViewModel
             get { return selectedPriorita; }
             set
             {
-                if(selectedPriorita != value)
-                {
-                    selectedPriorita = value;
-                    string color = selectedPriorita.Value;
-                    Priority = color;
+                selectedPriorita = value;
 
-                    if (string.Equals(color, "Bassa"))
-                    {
-                        Source = "verde.png";
-                    }
-                    else if (string.Equals(color, "Alta"))
-                    {
-                        Source = "rosso.png";
-                    }
-                    else Source = "giallo.png";
-                }
+                Source = selectedPriorita.Value;
+               
+
             }
         }
 
-        private string priority;
-        public string Priority
-        {
-            get { return priority; }
-            set
-            {
-                if(priority != value)
-                {
-                    priority = value;
-                    OnPropertyChanged("Priority");
-                }
-            }
-        }
-
+        
 
         private string source;
         public string Source
         {
-            get
-            {
-                return source;
-            }
+            get { return source; }
             set
             {
-                source = value;            }
+
+                if (string.Equals(value, "Bassa"))
+                {
+                    source = "verde.png";
+                }
+                else if (string.Equals(value, "Alta"))
+                {
+                    source = "rosso.png";
+                }
+                else if (string.Equals(value, "Media"))
+                {
+                    source = "giallo.png";
+                }
+                else source = value;
+                OnPropertyChanged("Source");
+             
+
             }
+        }
+
+
+        
 
 
         private string name;
