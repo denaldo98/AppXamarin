@@ -1,5 +1,4 @@
-﻿using ProgettoEsame.Interfaces;
-using ProgettoEsame.ViewModel.Helpers;
+﻿using ProgettoEsame.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

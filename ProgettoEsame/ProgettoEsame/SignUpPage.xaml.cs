@@ -27,49 +27,47 @@ namespace ProgettoEsame
         {
             string mail = txtMail.Text;
             string pass = txtPass.Text;
-            //string confpass = txtConfPass.Text;
+            string confpass = txtConfPass.Text;
             string nome = txtnome.Text;
             string cognome = txtCognome.Text;
 
-            string token = await Auth.DoRegisterWithEP(string.Concat(nome, " " , cognome) , mail, pass);
-            //await DisplayAlert("ok", token, "OK");
-            if (token != "") //registrazione OK
+            if(string.IsNullOrWhiteSpace(nome))
             {
-                await DisplayAlert("SignUp successfull", "Press OK to continue to Home Page", "OK");
-            
-                App.Current.MainPage = new HomePage();
-            }
-            else //errore nella registrazione
-            {
-                ShowError();
-            }
-        }
-
-
-
-        
-
-        async private void ShowError() //inserire controlli
-        {
-            // Validations for email and password
-            if (string.IsNullOrWhiteSpace(txtMail.Text))
+                await DisplayAlert("SignUp failed", "Please enter name!", "OK");
+            } 
+            else if (string.IsNullOrWhiteSpace(mail))
             {
                 await DisplayAlert("SignUp failed", "Please enter email!", "OK");
             }
-            else if (string.IsNullOrEmpty(txtPass.Text))
+            else if (string.IsNullOrEmpty(pass))
             {
                 await DisplayAlert("SignUp failed", "Please enter password!!", "OK");
             }
-            else if (txtPass.Text.Length < 6)
+            else if (pass.Length < 6)
             {
                 await DisplayAlert("SignUp failed", "Password too short, enter minimum 6 characters!", "OK");
             }
-            else
+            else if (!string.Equals(pass, confpass))
             {
-                await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
+                await DisplayAlert("SignUp failed", "Le password non coincidono!", "OK");
+            } else
+            {
+                string token = await Auth.DoRegisterWithEP(string.Concat(nome, " ", cognome), mail, pass);
+                //await DisplayAlert("ok", token, "OK");
+                if (token != "") //registrazione OK
+                {
+                    await DisplayAlert("SignUp successfull", "Press OK to continue to Home Page", "OK");
+                    App.Current.MainPage = new HomePage();
+                }
+                else //errore nella registrazione
+                {
+                    await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
+                }
+
             }
-
-
+            
+            
+            
         }
 
         async void BtnToLogin_Clicked(object sender, EventArgs e)
