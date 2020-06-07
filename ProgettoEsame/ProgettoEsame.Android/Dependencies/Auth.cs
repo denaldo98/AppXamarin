@@ -23,7 +23,7 @@ namespace ProgettoEsame.Droid.Dependencies
         {
         }
 
-        public async Task<bool> AuthenticateUser(string email, string password)
+        /*public async Task<bool> AuthenticateUser(string email, string password)
         {
             try
             {
@@ -47,7 +47,47 @@ namespace ProgettoEsame.Droid.Dependencies
             {
                 throw new Exception("An unknown erro occurred, please try again.");
             }
+        }*/
+
+        public async Task<string> DoLoginWithEP(string E, string P)    //login con email e password
+        {
+            try
+            {
+                var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(E, P);
+                var token = await user.User.GetIdTokenAsync(false);
+                return token.Token;
+            }
+            catch (FirebaseAuthInvalidUserException notFound)
+            {
+                //return notFound.Message;
+                notFound.PrintStackTrace();
+                return "";
+
+
+            }
+            catch (Exception err)
+            {
+                //return err.Message;
+                return "";
+            }
+
         }
+
+
+        public async Task<bool> Logout()
+        {
+            try
+            {
+                Firebase.Auth.FirebaseAuth.Instance.SignOut();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
 
         public string GetCurrentUserId()
         {
@@ -59,7 +99,7 @@ namespace ProgettoEsame.Droid.Dependencies
              return Firebase.Auth.FirebaseAuth.Instance.CurrentUser != null;
         }
 
-        public async Task<bool> RegisterUser(string name, string email, string password)
+        /*public async Task<bool> RegisterUser(string name, string email, string password)
         {
             try { 
             await Firebase.Auth.FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
@@ -88,6 +128,31 @@ namespace ProgettoEsame.Droid.Dependencies
             {
                 throw new Exception("An unknown erro occurred, please try again.");
             }
+        }*/
+
+        public async Task<string> DoRegisterWithEP(string N, string E, string P)   //registrazione con email e password
+        {
+            try
+            {
+                var create = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(E, P);
+                var profileUpdates = new Firebase.Auth.UserProfileChangeRequest.Builder();
+                profileUpdates.SetDisplayName(N);
+                var build = profileUpdates.Build();
+
+                var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
+                await user.UpdateProfileAsync(build);
+                var token = await create.User.GetIdTokenAsync(false);
+                return token.Token;
+
+            }
+            catch (Exception err)
+            {
+                //return err.Message;
+                return "";
+            }
+
         }
+
+
     }
 }

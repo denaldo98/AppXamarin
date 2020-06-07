@@ -1,4 +1,4 @@
-﻿using ProgettoEsame.Interfaces;
+﻿using ProgettoEsame.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,11 +12,9 @@ namespace ProgettoEsame
     [DesignTimeVisible(true)]
     public partial class LoginPage2 : ContentPage
     {
-        IFirebaseAuth auth;
         public LoginPage2()
         {
             InitializeComponent();
-            auth = DependencyService.Get<IFirebaseAuth>();
             Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -26,7 +24,7 @@ namespace ProgettoEsame
             string pass = txtPass.Text;
 
 
-            string token = await auth.DoLoginWithEP(mail, pass);
+            string token = await Auth.DoLoginWithEP(mail, pass);
             //await DisplayAlert("ok",token,"OK");
             if (token != "")
             {

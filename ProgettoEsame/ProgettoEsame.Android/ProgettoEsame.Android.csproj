@@ -85,7 +85,6 @@
     <Compile Include="Dependencies\FirestoreCorsi.cs" />
     <Compile Include="Dependencies\FirestoreLunedi.cs" />
     <Compile Include="Dependencies\FirestoreToDo.cs" />
-    <Compile Include="Interfaces\AndroAuth.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

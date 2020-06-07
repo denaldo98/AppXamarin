@@ -1,5 +1,4 @@
-﻿using ProgettoEsame.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +7,7 @@ using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ProgettoEsame.ViewModel.Helpers;
 
 namespace ProgettoEsame
 {
@@ -16,11 +16,10 @@ namespace ProgettoEsame
     public partial class SignUpPage : ContentPage
     {
 
-        IFirebaseAuth auth;
+        
         public SignUpPage()
         {
             InitializeComponent();
-            auth = DependencyService.Get<IFirebaseAuth>();
             Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -29,10 +28,10 @@ namespace ProgettoEsame
             string mail = txtMail.Text;
             string pass = txtPass.Text;
             //string confpass = txtConfPass.Text;
-            //string nome = txtnome.Text;
-            //string cognome = txtCognome.Text;
+            string nome = txtnome.Text;
+            string cognome = txtCognome.Text;
 
-            string token = await auth.DoRegisterWithEP(mail, pass);
+            string token = await Auth.DoRegisterWithEP(string.Concat(nome, " " , cognome) , mail, pass);
             //await DisplayAlert("ok", token, "OK");
             if (token != "") //registrazione OK
             {

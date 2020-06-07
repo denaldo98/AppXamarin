@@ -1,4 +1,5 @@
 ﻿using ProgettoEsame.Interfaces;
+using ProgettoEsame.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,8 +73,7 @@ namespace ProgettoEsame
             };
 
             item4.Clicked += async (sender, args) => {
-                IFirebaseAuth auth = DependencyService.Get<IFirebaseAuth>();
-                bool logout  = await auth.Logout();
+                bool logout = await Auth.Logout();
                 if (logout)
                 {
                     Application.Current.Properties["logged"] = "false";
