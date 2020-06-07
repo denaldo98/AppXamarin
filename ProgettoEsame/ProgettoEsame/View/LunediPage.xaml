@@ -73,7 +73,7 @@
             <Button
              Grid.Row="0"
                 Text="+" FontSize="35"
-                BorderColor="#2b3c3c" BorderWidth="1"  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="70" HeightRequest="70" Margin="0,0,20,22" VerticalOptions="End"
+                BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="65" HeightRequest="65" Margin="0,0,20,22" VerticalOptions="End"
           
             Clicked="ToolbarItem_Clicked"/>
 

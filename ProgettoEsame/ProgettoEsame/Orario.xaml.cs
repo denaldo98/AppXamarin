@@ -20,13 +20,13 @@ namespace ProgettoEsame
 
             ToolbarItem item = new ToolbarItem
             {
-                Text = "Item",   
+                Text = "Faq",   
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 0
             };
 
             item.Clicked += (sender, args) => {
-                Navigation.PushAsync(new Page1());
+                Navigation.PushAsync(new FaqPage());
             };
 
             // "this" refers to a Page object
@@ -34,14 +34,14 @@ namespace ProgettoEsame
 
             ToolbarItem item2 = new ToolbarItem
             {
-                Text = "Item2",
+                Text = "Contatti",
                 IconImageSource = ImageSource.FromFile("example_icon.png"),
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 0
             };
 
             item2.Clicked += (sender, args) => {
-                Navigation.PushAsync(new Page1());
+                Navigation.PushAsync(new ContattiPage());
             };
 
             // "this" refers to a Page object
