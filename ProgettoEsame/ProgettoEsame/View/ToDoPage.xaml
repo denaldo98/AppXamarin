@@ -44,7 +44,7 @@
                                 <Label HorizontalOptions="Start" FontSize="14"  TextColor="Black" Text="{Binding Description}"/>
                             </StackLayout>
                             <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
-                                <Label Text="{Binding Priority}" HorizontalOptions="FillAndExpand" IsVisible="true" />
+                                <Image Source="{Binding Source}" HorizontalOptions="FillAndExpand" />
                                 <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding Scadenza}"/>
                             </StackLayout>
                         </StackLayout>

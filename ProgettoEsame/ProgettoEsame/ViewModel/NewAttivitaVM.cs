@@ -59,11 +59,18 @@ namespace ProgettoEsame.ViewModel
                 if(selectedPriorita != value)
                 {
                     selectedPriorita = value;
-                    
-                    Priority = selectedPriorita.Value;
-                    
-                    //Do whatever functionality you want when a selectedItem is Changed
-                    
+                    string color = selectedPriorita.Value;
+                    Priority = color;
+
+                    if (string.Equals(color, "Bassa"))
+                    {
+                        Source = "verde.png";
+                    }
+                    else if (string.Equals(color, "Alta"))
+                    {
+                        Source = "rosso.png";
+                    }
+                    else Source = "giallo.png";
                 }
             }
         }
@@ -83,7 +90,17 @@ namespace ProgettoEsame.ViewModel
         }
 
 
-
+        private string source;
+        public string Source
+        {
+            get
+            {
+                return source;
+            }
+            set
+            {
+                source = value;            }
+            }
 
 
         private string name;
@@ -143,7 +160,7 @@ namespace ProgettoEsame.ViewModel
 
                 Name = Name,
                 Description = Description,
-                Priority = Priority,
+                Source = Source,
                 Scadenza = Scadenza
                 
             });

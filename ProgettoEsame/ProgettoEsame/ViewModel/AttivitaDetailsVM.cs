@@ -38,14 +38,18 @@ namespace ProgettoEsame.ViewModel
                 if (selectedPriorita != value)
                 {
                     selectedPriorita = value;
-
+                   
                     Priority = selectedPriorita.Value;
+
+                    
 
                     //Do whatever functionality you want when a selectedItem is Changed
 
                 }
             }
         }
+
+
 
         private string priority;
         public string Priority
@@ -55,11 +59,32 @@ namespace ProgettoEsame.ViewModel
             {
                 if (priority != value)
                 {
+                    if (string.Equals(value, "Bassa"))
+                    {
+                        Source = "verde.png";
+                    }
+                    else if (string.Equals(value, "Alta"))
+                    {
+                        Source = "rosso.png";
+                    }
+                    else Source = "giallo.png";
+
                     priority = value;
-                    Attivita.Priority = priority;
                     OnPropertyChanged("Priority");
-                    OnPropertyChanged("Attivita");
+                    //OnPropertyChanged("Attivita");
                 }
+            }
+        }
+
+
+        private string source;
+        public string Source
+        {
+            get { return source; }
+            set { 
+                source = value;
+                Attivita.Source = source;
+                OnPropertyChanged("Attivita");
             }
         }
 
@@ -114,7 +139,7 @@ namespace ProgettoEsame.ViewModel
                 attivita = value;
                 Name = attivita.Name;
                 Description = attivita.Description;
-                Priority = attivita.Priority;
+                Source = attivita.Source;
                 Scadenza = attivita.Scadenza;
                 OnPropertyChanged("Attivita");
             }

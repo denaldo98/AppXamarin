@@ -59,7 +59,7 @@ namespace ProgettoEsame.Droid.Dependencies
                 {
                     {"name", attivita.Name },
                     {"description", attivita.Description },
-                    {"priority", attivita.Priority },
+                    {"source", attivita.Source },
                     {"data", attivita.Scadenza },
                 };
                 collection.Add(attivitaDocument);
@@ -98,7 +98,7 @@ namespace ProgettoEsame.Droid.Dependencies
             try
             {
                 var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("users").Document(Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid).Collection("ToDo");
-                collection.Document(attivita.Id).Update("name", attivita.Name, "description", attivita.Description, "priority", attivita.Priority, "data", attivita.Scadenza);
+                collection.Document(attivita.Id).Update("name", attivita.Name, "description", attivita.Description, "source", attivita.Source, "data", attivita.Scadenza);
                 return true;
             }
             catch (Exception ex)
@@ -119,20 +119,20 @@ namespace ProgettoEsame.Droid.Dependencies
                 attivitaList.Clear();
                 foreach (var doc in documents.Documents)
                 {
-                    string desc, priority, dat;
+                    string desc, source, dat;
                     if(doc.Get("description") == null) {
                         desc = "";
                     } else
                     {
                         desc = doc.Get("description").ToString();
                     }
-                    if (doc.Get("priority") == null)
+                    if (doc.Get("source") == null)
                     {
-                        priority = "";
+                        source = "";
                     }
                     else
                     {
-                       priority = doc.Get("priority").ToString();
+                       source = doc.Get("source").ToString();
                     }
                     if (doc.Get("data") == null)
                     {
@@ -148,7 +148,7 @@ namespace ProgettoEsame.Droid.Dependencies
                     {
                         Name = doc.Get("name").ToString(),
                         Description = desc,  
-                        Priority = priority,
+                        Source = source,
                         Scadenza = dat,
                         Id = doc.Id
                     };
