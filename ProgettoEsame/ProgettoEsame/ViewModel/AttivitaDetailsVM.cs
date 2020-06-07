@@ -140,6 +140,16 @@ namespace ProgettoEsame.ViewModel
                 Name = attivita.Name;
                 Description = attivita.Description;
                 Source = attivita.Source;
+                if(string.Equals(Source, "verde.png"))
+                {
+                    Priority = "bassa";
+                } else if(string.Equals(source, "giallo.png"))
+                {
+                    Priority = "media";
+                } else if(string.Equals(source, "rosso.png"))
+                {
+                    Priority = "alta";
+                }
                 Scadenza = attivita.Scadenza;
                 OnPropertyChanged("Attivita");
             }

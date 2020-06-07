@@ -20,11 +20,6 @@
     </ContentPage.ToolbarItems>
     
     
-
-    
-    
-    
-    
     
     <ContentPage.Content>
         <StackLayout BindingContext="{StaticResource vm}"
@@ -33,18 +28,20 @@
                    Text="{Binding Name, Mode=TwoWay}"/>
             
 
-            <Picker Title="--Priorità--" TitleColor="Red" HorizontalOptions="StartAndExpand" 
+            <Picker Title="--Priorità--" Margin="0,20,0,0" FontSize="Large" TitleColor="Red" HorizontalOptions="StartAndExpand" 
                     ItemsSource="{Binding prioritaList}" 
                     ItemDisplayBinding="{Binding Value}"
                     SelectedItem="{Binding SelectedPriorita}"/>
             <Label Text="{Binding Priority}" HorizontalOptions="Fill" IsVisible="false"/>
-            <StackLayout Orientation="Horizontal" >
-                <Label Text="{Binding Scadenza}" HorizontalOptions="Start" Margin="4,10,0,0" ></Label>
+
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+                <Label Text="Scadenza" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,10,0,0"></Label>
+                <Label Text="{Binding Scadenza}" TextColor="Blue" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="4,10,0,0" ></Label>
                 <DatePicker x:Name="scadenza" Format="d" HorizontalOptions="EndAndExpand" FontAttributes="Italic" FlowDirection="MatchParent" Margin="0,0,20,0" Date="{Binding DateTo}"></DatePicker>
                 
             </StackLayout>
 
-            <Entry Placeholder="Descrizione" HorizontalOptions="Fill"
+            <Entry Placeholder="Descrizione" Margin="0,20,0,0" HorizontalOptions="Fill"
                    Text="{Binding Description, Mode=TwoWay}"/>
 
 
