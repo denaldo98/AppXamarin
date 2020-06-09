@@ -13,7 +13,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update"
+        <ToolbarItem Text="CONFERMA"
                      BindingContext="{StaticResource vm}"
                      Command="{Binding UpdateCommand}"
                      CommandParameter="{Binding Name}"/>

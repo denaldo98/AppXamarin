@@ -49,7 +49,7 @@
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
                                 <Label HorizontalOptions="Start" VerticalTextAlignment="Start" FontSize="25" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                                <Label HorizontalOptions="Start" VerticalTextAlignment="End" FontSize="14"  TextColor="Black" Text="{Binding Description}"/>
+                                <Label HorizontalOptions="Start" VerticalTextAlignment="End" FontSize="18"  TextColor="Black" Text="{Binding Description}"/>
                             </StackLayout>
                             <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
                                 <Image Source="{Binding Source}" HorizontalOptions="FillAndExpand" />

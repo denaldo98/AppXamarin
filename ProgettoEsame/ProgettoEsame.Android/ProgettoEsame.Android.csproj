@@ -83,8 +83,13 @@
     <Compile Include="Dependencies\FirestoreAppelli.cs" />
     <Compile Include="Dependencies\FirestoreAppunti.cs" />
     <Compile Include="Dependencies\FirestoreCorsi.cs" />
+    <Compile Include="Dependencies\FirestoreGiovedi.cs" />
     <Compile Include="Dependencies\FirestoreLunedi.cs" />
+    <Compile Include="Dependencies\FirestoreMartedi.cs" />
+    <Compile Include="Dependencies\FirestoreMercoledi.cs" />
+    <Compile Include="Dependencies\FirestoreSabato.cs" />
     <Compile Include="Dependencies\FirestoreToDo.cs" />
+    <Compile Include="Dependencies\FirestoreVenerdi.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

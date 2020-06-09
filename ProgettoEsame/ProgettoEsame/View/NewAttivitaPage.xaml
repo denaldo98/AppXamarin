@@ -14,7 +14,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save"
+        <ToolbarItem Text="CONFERMA"
                      Command="{Binding Source={StaticResource vm}, Path=SaveAttivitaCommand}"
                      CommandParameter="{Binding Source={StaticResource vm}, Path=Name}"/>
     </ContentPage.ToolbarItems>

@@ -15,7 +15,7 @@ namespace ProgettoEsame.View
         public NewLunediPage()
         {
             InitializeComponent();
-            Title = "Inserimento evento";
+            Title = "Inserimento Evento";
         }
     }
 }

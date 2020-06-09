@@ -14,7 +14,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Modifica"
+        <ToolbarItem Text="MODIFICA"
                      Clicked="DettaglioCorsoClicked"/>
     </ContentPage.ToolbarItems>
 
@@ -27,26 +27,26 @@
             <ScrollView Grid.Row="0">
                 
             <StackLayout BindingContext="{StaticResource vm}"
-              Spacing="10"   Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+              Spacing="5"   Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
                 
-                <StackLayout Margin="10,0" Orientation="Horizontal">
-                        <Label Text="Nome Corso:  " TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,10,0,0"></Label>
-                        <Label Text="{Binding Name, Mode=TwoWay}" FontSize="Large" HorizontalOptions="Start" Margin="4,10,0,0" />
+                <StackLayout Margin="5,0" Orientation="Horizontal">
+                        <Label Text="Nome Corso:  " TextColor="Black" FontSize="20" HorizontalOptions="Start" Margin="4,10,0,0"></Label>
+                        <Label Text="{Binding Name, Mode=TwoWay}" FontSize="18" HorizontalOptions="Start" Margin="4,10,0,0" />
                 </StackLayout>
                 
-                <StackLayout Margin="10,0" Orientation="Horizontal">
-                        <Label Text="Nome Prof:  " TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,0,0,0"></Label>
-                        <Label  Margin="0,0,0,0" Text="{Binding NameProf, Mode=TwoWay}" FontSize="Large" HorizontalOptions="Start"/>
+                <StackLayout Margin="5,0" Orientation="Horizontal">
+                        <Label Text="Nome Prof:  " TextColor="Black" FontSize="20" HorizontalOptions="Start" Margin="4,0,0,0"></Label>
+                        <Label  Margin="0,0,0,0" Text="{Binding NameProf, Mode=TwoWay}" FontSize="18" HorizontalOptions="Start"/>
                 </StackLayout>
                 
-                 <StackLayout Margin="10,0" Orientation="Horizontal">
-                        <Label Text="Email prof:  " TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,0,0,0"></Label>
-                        <Label Margin="0,0,0,0" Text="{Binding EmailProf, Mode=TwoWay}" FontSize="Large" HorizontalOptions="Start"/>
+                 <StackLayout Margin="5,0" Orientation="Horizontal">
+                        <Label Text="Email prof:  " TextColor="Black" FontSize="20" HorizontalOptions="Start" Margin="4,0,0,0"></Label>
+                        <Label Margin="0,0,0,0" Text="{Binding EmailProf, Mode=TwoWay}" FontSize="18" HorizontalOptions="Start"/>
                  </StackLayout>
                 
-                 <StackLayout Margin="10,0" Orientation="Horizontal">
-                        <Label Text="CFU:  " TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,0,0,0"></Label>
-                        <Label Margin="0,0,0,0" Text="{Binding NumCFU, Mode=TwoWay}" FontSize="Large" HorizontalOptions="Start"/>
+                 <StackLayout Margin="5,0" Orientation="Horizontal">
+                        <Label Text="CFU:  " TextColor="Black" FontSize="20" HorizontalOptions="Start" Margin="4,0,0,0"></Label>
+                        <Label Margin="0,0,0,0" Text="{Binding NumCFU, Mode=TwoWay}" FontSize="18" HorizontalOptions="Start"/>
                   </StackLayout>
 
                     <Label Text="Appunti" HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold" TextColor="Black" ></Label>
