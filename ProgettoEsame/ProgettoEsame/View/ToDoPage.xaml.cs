@@ -19,7 +19,7 @@ namespace ProgettoEsame.View
         public ToDoPage()
         {
             InitializeComponent();
-            Title = "To do";
+            Title = "To do list";
 
             vm = Resources["vm"] as AttivitaVM; //accedo alla risorsa tramite chiave
 

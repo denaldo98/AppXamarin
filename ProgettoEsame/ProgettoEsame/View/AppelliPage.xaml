@@ -47,13 +47,10 @@
 
                     <ViewCell>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
-                                <Label HorizontalOptions="Start" FontSize="30" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                            </StackLayout>
-                            <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
-                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding Date}"/>
-                            </StackLayout>
-                        </StackLayout>
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                                        <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding Date}"/>
+                         </StackLayout>
+                     
                     </ViewCell>
 
                 </DataTemplate>
@@ -69,8 +66,8 @@
             Clicked="ToolbarItem_Clicked"/>-->
             <Button
              Grid.Row="0"
-                Text="+" FontSize="35"
-                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="65" HeightRequest="65" Margin="0,0,20,22" VerticalOptions="End"
+                Text="+" FontSize="30"
+                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="60" HeightRequest="60" Margin="0,0,10,10" VerticalOptions="End"
           
             Clicked="ToolbarItem_Clicked"/>
 

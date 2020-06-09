@@ -38,7 +38,7 @@
             <ScrollView Grid.Row="0">
          <StackLayout Orientation="Vertical">
         <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="70" 
+                  RowHeight="80" 
                   BackgroundColor="LightBlue"
                   ItemsSource="{Binding LunediColl}"
                   SelectedItem="{Binding SelectedLunedi, Mode=TwoWay}">
@@ -47,13 +47,13 @@
 
                     <ViewCell>
                         <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
-                                    <Label HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                                    <Label HorizontalOptions="Start" FontSize="14" TextColor="Black" Text="{Binding Luogo}"/>
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" >
+                                    <Label HorizontalOptions="Start" VerticalTextAlignment="Start" FontSize="25" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                                    <Label HorizontalOptions="Start" FontSize="18" VerticalTextAlignment="End" TextColor="Black" Text="{Binding Luogo}"/>
                             </StackLayout>
-                            <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
-                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding OraI}"/>
-                                <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding OraF}"/>
+                            <StackLayout HorizontalOptions="End" Orientation="Vertical" >
+                                <Label HorizontalOptions="End" VerticalTextAlignment="Start" FontSize="18" TextColor="Black" Text="{Binding OraI}"/>
+                                <Label HorizontalOptions="End" VerticalTextAlignment="End" FontSize="18" TextColor="Black" Text="{Binding OraF}"/>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
@@ -72,8 +72,8 @@
             Clicked="ToolbarItem_Clicked"/>-->
             <Button
              Grid.Row="0"
-                Text="+" FontSize="35"
-                BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="65" HeightRequest="65" Margin="0,0,20,22" VerticalOptions="End"
+                Text="+" FontSize="30"
+                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="60" HeightRequest="60" Margin="0,0,10,10" VerticalOptions="End"
           
             Clicked="ToolbarItem_Clicked"/>
 

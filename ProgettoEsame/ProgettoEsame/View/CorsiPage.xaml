@@ -35,7 +35,7 @@
                 <StackLayout Orientation="Vertical">
                     
                     <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="70" 
+                  RowHeight="60" 
                   BackgroundColor="LightBlue"
                   ItemsSource="{Binding Corsi}"
                   SelectedItem="{Binding SelectedCorso, Mode=TwoWay}">
@@ -43,9 +43,11 @@
                 <DataTemplate>
 
                     <ViewCell>
-                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
-                            <Label HorizontalOptions="Start" FontSize="30" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                        </StackLayout>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
+                            <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" MaxLines="1" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                             <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding NumCFU}"/>
+
+                                    </StackLayout>
                     </ViewCell>
 
                 </DataTemplate>
@@ -60,8 +62,8 @@
             Clicked="ToolbarItem_Clicked"/>-->
             <Button
              Grid.Row="0"
-                Text="+" FontSize="35"
-                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="65" HeightRequest="65" Margin="0,0,20,22" VerticalOptions="End"
+                Text="+" FontSize="30"
+                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="60" HeightRequest="60" Margin="0,0,10,10" VerticalOptions="End"
           
             Clicked="ToolbarItem_Clicked"/>
 

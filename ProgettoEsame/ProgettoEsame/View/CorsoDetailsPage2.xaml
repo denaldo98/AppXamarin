@@ -51,7 +51,7 @@
 
                     <Label Text="Appunti" HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold" TextColor="Black" ></Label>
             <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="70" 
+                  RowHeight="60" 
                   BackgroundColor="LightBlue"
                   ItemsSource="{Binding Appunti}"
                   SelectedItem="{Binding SelectedAppunto, Mode=TwoWay}">
@@ -59,14 +59,9 @@
                     <DataTemplate>
 
                         <ViewCell>
-                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
-                                    <Label HorizontalOptions="Start" FontSize="24" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                                </StackLayout>
-                                <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
-                                    <Label HorizontalOptions="End" FontSize="14" TextColor="Black" Text="{Binding Description}"/>
-                                </StackLayout>
-                            </StackLayout>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                                    </StackLayout>
                         </ViewCell>
 
                     </DataTemplate>
@@ -84,8 +79,8 @@
             Clicked="ToolbarItem_Clicked"/>-->
             <Button
              Grid.Row="0"
-                Text="+" FontSize="35"
-                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="65" HeightRequest="65" Margin="0,0,20,22" VerticalOptions="End"
+                Text="+" FontSize="30"
+                  BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="60" HeightRequest="60" Margin="0,0,10,10" VerticalOptions="End"
           
             Clicked="ToolbarItem_Clicked"/>
 
