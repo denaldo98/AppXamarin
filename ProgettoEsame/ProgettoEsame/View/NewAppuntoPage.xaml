@@ -31,9 +31,10 @@
             Spacing="10" Margin="10,0" Padding="10" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <Entry Placeholder="Nome Appunto" Margin="0,10,0,0"
                    Text="{Binding Name, Mode=TwoWay}"/>
-
-            <Entry Placeholder="Descrizione" HorizontalOptions="Fill"
-                   Text="{Binding Description, Mode=TwoWay}"/>
+            <ScrollView Orientation="Vertical">
+            <Editor Placeholder="Descrizione" HorizontalOptions="Fill"
+                   Text="{Binding Description, Mode=TwoWay}" Keyboard="Text" AutoSize="TextChanges"/>
+            </ScrollView>
 
 
             </StackLayout>
