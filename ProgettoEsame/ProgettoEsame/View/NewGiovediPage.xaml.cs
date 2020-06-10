@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewGiovediPage()
         {
             InitializeComponent();
+            Title = "Inserimento Evento";
         }
     }
 }

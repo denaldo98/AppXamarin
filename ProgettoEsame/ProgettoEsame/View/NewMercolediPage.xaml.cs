@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewMercolediPage()
         {
             InitializeComponent();
+            Title = "Inserimento Evento";
         }
     }
 }

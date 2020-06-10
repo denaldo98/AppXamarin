@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewVenerdiPage()
         {
             InitializeComponent();
+            Title = "Inserimento Evento";
         }
     }
 }

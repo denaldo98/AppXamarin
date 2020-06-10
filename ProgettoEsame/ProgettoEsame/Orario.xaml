@@ -7,9 +7,9 @@
              x:Class="ProgettoEsame.Orario">
     <!--Pages can be added as references or inline-->
     <progettoesame1:LunediPage Title="Lun" />
-    <progettoesame:ListaToDo Title="Mar" />
-    <progettoesame:ListaToDo2 Title="Mer" />
-    <ContentPage Title="Gio" />
-    <ContentPage Title="Ven" />
-    <ContentPage Title="Sab" />
+    <progettoesame1:MartediPage Title="Mar" />
+    <progettoesame1:MercolediPage Title="Mer" />
+    <progettoesame1:GiovediPage Title="Gio" />
+    <progettoesame1:VenerdiPage Title="Ven" />
+    <progettoesame1:SabatoPage Title="Sab" />
 </TabbedPage>

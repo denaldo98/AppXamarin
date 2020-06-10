@@ -15,6 +15,7 @@ namespace ProgettoEsame.View
         public NewSabatoPage()
         {
             InitializeComponent();
+            Title = "Inserimento Evento";
         }
     }
 }

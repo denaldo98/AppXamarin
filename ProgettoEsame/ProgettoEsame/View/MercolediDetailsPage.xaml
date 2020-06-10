@@ -3,13 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ProgettoEsame.ViewModel"
              mc:Ignorable="d"
              x:Class="ProgettoEsame.View.MercolediDetailsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:MercolediDetailsVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="CONFERMA"
+                     BindingContext="{StaticResource vm}"
+                     Command="{Binding UpdateCommand}"
+                     CommandParameter="{Binding Name}"/>
+    </ContentPage.ToolbarItems>
+
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BindingContext="{StaticResource vm}"
+                     Spacing="10" Margin="10,0" Padding="15" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <Entry Placeholder="Nome Evento" Margin="0,10,0,0"
+                   Text="{Binding Name, Mode=TwoWay}"/>
+            <Entry Placeholder="Aula/Luogo" Margin="0,10,0,0"
+                   Text="{Binding Luogo, Mode=TwoWay}"/>
+
+
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                <Label Text="Ora Inizio" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,10,0,0"></Label>
+                <Label Text="{Binding OraI}" TextColor="Blue" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="4,10,0,0"></Label>
+                <TimePicker x:Name="oraI" HorizontalOptions="EndAndExpand" FontAttributes="Italic" FlowDirection="MatchParent" Margin="0,0,20,0" Time="{Binding TimeStart}"></TimePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Text="Ora Fine  " TextColor="Black" FontSize="Large" HorizontalOptions="Start" Margin="4,10,0,0"></Label>
+                <Label Text="{Binding OraF}" TextColor="Blue" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="4,10,0,0" ></Label>
+                <TimePicker x:Name="oraF"  HorizontalOptions="EndAndExpand" FontAttributes="Italic" FlowDirection="MatchParent" Margin="0,0,20,0" Time="{Binding TimeEnd}"></TimePicker>
+
+            </StackLayout>
+
+
+
+
+            <Button Text="Delete"
+                    Command="{Binding DeleteCommand}"
+                    Style="{StaticResource destructiveButton}"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

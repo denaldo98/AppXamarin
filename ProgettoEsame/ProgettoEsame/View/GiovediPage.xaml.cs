@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgettoEsame.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,24 @@ namespace ProgettoEsame.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GiovediPage : ContentPage
     {
+        GiovediVM vm;
+
         public GiovediPage()
         {
             InitializeComponent();
+
+            vm = Resources["vm"] as GiovediVM; //accedo alla risorsa tramite chiave
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            vm.ReadGiovedi(); //così ogni volta che ritorniamo in questa pag richiamo il metodo   
+        }
+
+        void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new NewGiovediPage());
         }
     }
 }
