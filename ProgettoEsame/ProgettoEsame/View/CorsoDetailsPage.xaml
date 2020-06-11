@@ -28,7 +28,7 @@
             <Entry Placeholder="Email Professore" Margin="0,10,0,0"
                    Text="{Binding EmailProf, Mode=TwoWay}"/>
             <Entry Placeholder="Numero CFU" Margin="0,10,0,0" Keyboard="Numeric"
-                   Text="{Binding NumCFU, Mode=TwoWay}"/>
+                   Text="{Binding NumCFU, Mode=TwoWay}" MaxLength="2"/>
 
 
             <Button Text="Delete"

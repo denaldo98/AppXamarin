@@ -39,14 +39,14 @@
                 <StackLayout Orientation="Vertical">
                     <ListView BindingContext="{StaticResource vm}" 
                   RowHeight="70" 
-                  BackgroundColor="LightBlue"
+                  BackgroundColor="White"
                   ItemsSource="{Binding MartediColl}"
                   SelectedItem="{Binding SelectedMartedi, Mode=TwoWay}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
 
                                 <ViewCell>
-                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
                                         <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" >
                                             <Label HorizontalOptions="Start" VerticalTextAlignment="Start" FontSize="25" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="290"/>
                                             <Label HorizontalOptions="Start" FontSize="18" VerticalTextAlignment="End" TextColor="Black" Text="{Binding Luogo}" LineBreakMode="TailTruncation" WidthRequest="290"/>

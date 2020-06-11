@@ -51,16 +51,16 @@
 
                     <Label Text="Appunti" HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold" TextColor="Black" ></Label>
             <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="60" 
-                  BackgroundColor="LightBlue"
+                  RowHeight="70" 
+                  BackgroundColor="White"
                   ItemsSource="{Binding Appunti}"
                   SelectedItem="{Binding SelectedAppunto, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
 
                         <ViewCell>
-                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation"/>
                                     </StackLayout>
                         </ViewCell>
 

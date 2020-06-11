@@ -39,14 +39,14 @@
                 <StackLayout Orientation="Vertical">
                     <ListView BindingContext="{StaticResource vm}" 
                   RowHeight="85" 
-                  BackgroundColor="LightBlue"
+                  BackgroundColor="White"
                   ItemsSource="{Binding Activities}"
                   SelectedItem="{Binding SelectedAttivita, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
 
                     <ViewCell>
-                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
                                 <Label HorizontalOptions="Start" VerticalTextAlignment="Start" FontSize="25" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="270"/>
                                 <Label HorizontalOptions="Start" VerticalTextAlignment="End" FontSize="18"  TextColor="Black" Text="{Binding Description}" LineBreakMode="TailTruncation" WidthRequest="270"/>

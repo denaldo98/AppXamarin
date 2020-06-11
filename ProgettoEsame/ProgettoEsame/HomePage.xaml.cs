@@ -20,7 +20,7 @@ namespace ProgettoEsame
             InitializeComponent();
             Application.Current.Properties["logged"] = "true";
             Application.Current.SavePropertiesAsync();
-
+           
 
 
         }

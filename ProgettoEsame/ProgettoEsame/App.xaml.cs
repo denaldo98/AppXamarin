@@ -15,6 +15,7 @@ namespace ProgettoEsame
                 if (Application.Current.Properties["logged"].ToString().Equals("true"))
                 {
                     MainPage = new HomePage();
+                   
                 }
                 else
                 {

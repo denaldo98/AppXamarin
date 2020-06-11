@@ -35,16 +35,16 @@
                 <StackLayout Orientation="Vertical">
                     
                     <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="60" 
-                  BackgroundColor="LightBlue"
+                  RowHeight="70" 
+                  BackgroundColor="White"
                   ItemsSource="{Binding Corsi}"
                   SelectedItem="{Binding SelectedCorso, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
 
                     <ViewCell>
-                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" MaxLines="1" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="380"/>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" MaxLines="1" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="370"/>
                              <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding NumCFU}"/>
 
                                     </StackLayout>

@@ -16,6 +16,7 @@ namespace ProgettoEsame
         {
             InitializeComponent();         
             Title = "Contatti";
+           
         }
 
         private async void btnfaq_Clicked(object sender, EventArgs e)

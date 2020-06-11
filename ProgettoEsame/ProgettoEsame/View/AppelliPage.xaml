@@ -39,14 +39,14 @@
 
                 <ListView BindingContext="{StaticResource vm}" 
                   RowHeight="70" 
-                  BackgroundColor="LightBlue"
+                  BackgroundColor="White"
                   ItemsSource="{Binding Appelli}"
                   SelectedItem="{Binding SelectedAppello, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
 
                     <ViewCell>
-                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
                                         <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="280"/>
                                         <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding Date}"/>
                          </StackLayout>
