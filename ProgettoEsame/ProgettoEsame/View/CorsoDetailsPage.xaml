@@ -22,7 +22,7 @@
         <StackLayout BindingContext="{StaticResource vm}"
                      Spacing="10" Margin="10,0" Padding="15" Visual="Default" Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <Entry Placeholder="Materia" Margin="0,10,0,0"
-                   Text="{Binding Name, Mode=TwoWay}"/>
+                   Text="{Binding Name, Mode=TwoWay}" MaxLength="50"/>
             <Entry Placeholder="Nome Professore" Margin="0,10,0,0"
                    Text="{Binding NameProf, Mode=TwoWay}"/>
             <Entry Placeholder="Email Professore" Margin="0,10,0,0"

@@ -44,7 +44,7 @@
 
                     <ViewCell>
                                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                            <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" MaxLines="1" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" MaxLines="1" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="380"/>
                              <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding NumCFU}"/>
 
                                     </StackLayout>

@@ -15,7 +15,6 @@ namespace ProgettoEsame
         public FaqPage()
         {
             InitializeComponent();
-            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
             Title = "FAQ";
         }
     }

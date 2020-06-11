@@ -47,13 +47,13 @@
 
                                 <ViewCell>
                                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15">
-                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5">
-                                            <Label HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}"/>
-                                            <Label HorizontalOptions="Start" FontSize="14" TextColor="Black" Text="{Binding Luogo}"/>
+                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" >
+                                            <Label HorizontalOptions="Start" VerticalTextAlignment="Start" FontSize="25" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="290"/>
+                                            <Label HorizontalOptions="Start" FontSize="18" VerticalTextAlignment="End" TextColor="Black" Text="{Binding Luogo}" LineBreakMode="TailTruncation" WidthRequest="290"/>
                                         </StackLayout>
-                                        <StackLayout HorizontalOptions="End" Orientation="Vertical" Padding="5">
-                                            <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding OraI}"/>
-                                            <Label HorizontalOptions="End" FontSize="18" TextColor="Black" Text="{Binding OraF}"/>
+                                        <StackLayout HorizontalOptions="End" Orientation="Vertical" >
+                                            <Label HorizontalOptions="End" VerticalTextAlignment="Start" FontSize="18" TextColor="Black" Text="{Binding OraI}"/>
+                                            <Label HorizontalOptions="End" VerticalTextAlignment="End" FontSize="18" TextColor="Black" Text="{Binding OraF}"/>
                                         </StackLayout>
                                     </StackLayout>
                                 </ViewCell>

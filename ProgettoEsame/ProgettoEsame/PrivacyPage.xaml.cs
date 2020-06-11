@@ -10,11 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace ProgettoEsame
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InserimentoEvento : ContentPage
+    public partial class PrivacyPage : ContentPage
     {
-        public InserimentoEvento()
+        public PrivacyPage()
         {
             InitializeComponent();
+            Title = "Informativa Privacy";
         }
     }
 }

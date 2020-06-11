@@ -14,8 +14,7 @@ namespace ProgettoEsame
     {
         public ContattiPage()
         {
-            InitializeComponent();
-            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
+            InitializeComponent();         
             Title = "Contatti";
         }
 

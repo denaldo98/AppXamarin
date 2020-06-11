@@ -49,6 +49,18 @@ namespace ProgettoEsame.View
             };
             this.ToolbarItems.Add(item2); // "this" refers to a Page object
 
+            ToolbarItem item4 = new ToolbarItem
+            {
+                Text = "Informativa Privacy",
+                Order = ToolbarItemOrder.Secondary,
+                Priority = 0
+            };
+
+            item4.Clicked += (sender, args) => {
+                Navigation.PushAsync(new PrivacyPage());
+            };
+            this.ToolbarItems.Add(item4); // "this" refers to a Page object
+
 
             ToolbarItem item3 = new ToolbarItem
             {
