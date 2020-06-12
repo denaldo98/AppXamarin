@@ -38,7 +38,7 @@
             <ScrollView Grid.Row="0">
                 <StackLayout Orientation="Vertical">
                     <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="70" 
+                  RowHeight="80" 
                   BackgroundColor="White"
                   ItemsSource="{Binding MercolediColl}"
                   SelectedItem="{Binding SelectedMercoledi, Mode=TwoWay}">
