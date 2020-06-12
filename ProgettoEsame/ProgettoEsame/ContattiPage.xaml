@@ -12,9 +12,27 @@
                 <Label Text="Per qualsiasi informazione o problema, si prega di contattare una delle sequenti email:" FontSize="Title" TextColor="Black" />
 
                 <StackLayout Padding="10">
-                    <Label Text="marco.monini98@gmail.com" TextColor="Black"  FontSize="Large" BackgroundColor="Yellow" HorizontalOptions="Start" Margin="0,10"/>
-                    <Label Text="emailantonio@gmail.com" TextColor="Black"  FontSize="Large" BackgroundColor="GreenYellow" HorizontalOptions="Start" Margin="0,10"/>
-                    <Label Text="denaldo98@gmail.com" TextColor="Black"  FontSize="Large" BackgroundColor="Aqua" HorizontalOptions="Start" Margin="0,10"/>
+                    <Label Text="marco.monini98@gmail.com" TextColor="Black"  FontSize="20" BackgroundColor="Yellow" HorizontalOptions="Start" Margin="0,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="email"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    <Label Text="antoniofrancesco.politano@gmail.com" TextColor="Black"  FontSize="20" BackgroundColor="GreenYellow" HorizontalOptions="Start" Margin="0,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="email"/>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    <Label Text="denaldo98@gmail.com" TextColor="Black"  FontSize="20" BackgroundColor="Aqua" HorizontalOptions="Start" Margin="0,10" >
+                        <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="email"/>
+                        </Label.GestureRecognizers>
+
+                        </Label>
                 </StackLayout>
 
             </StackLayout>

@@ -23,5 +23,17 @@ namespace ProgettoEsame
         {
             await Navigation.PushAsync(new FaqPage());
         }
+
+        public void email(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+            switch(lbl.Text)
+            {
+                case "denaldo98@gmail.com": Xamarin.Forms.Device.OpenUri(new Uri("mailto:denaldo98@gmail.com")); break;
+                case "marco.monini98@gmail.com": Xamarin.Forms.Device.OpenUri(new Uri("mailto:marco.monini98@gmail.com")); break;
+                case "antoniofrancesco.politano@gmail.com": Xamarin.Forms.Device.OpenUri(new Uri("mailto:antoniofrancesco.politano@gmail.com")); break;
+            }
+            
+        }
     }
 }
