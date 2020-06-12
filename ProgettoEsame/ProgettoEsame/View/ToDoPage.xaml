@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ProgettoEsame.ViewModel"
              mc:Ignorable="d"
-             x:Class="ProgettoEsame.View.ToDoPage">
+             x:Class="ProgettoEsame.View.ToDoPage" >
 
 
     <ContentPage.Resources>

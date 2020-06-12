@@ -7,25 +7,18 @@
              x:Class="ProgettoEsame.App">
 
     <Application.Resources>
-        <Color x:Key="accentColor">#ea526f</Color>
-        <Color x:Key="mainColor">#86bbd8</Color>
-        <Color x:Key="lightColor">#FFFFFF</Color>
-        <Color x:Key="darkColor">#000000</Color>
-        <Color x:Key="destructiveColor">#ea526f</Color>
+      
 
-        <!--Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource mainColor}"/>
-            <Setter Property="TextColor" Value="{StaticResource lightColor}"/>
-        </Style> -->
+        <Color x:Key="destructiveColor">#F57C00</Color>
+
 
 
         <Style TargetType="Button" x:Key="destructiveButton">
             <Setter Property="BackgroundColor" Value="{StaticResource destructiveColor}"/>
+            <Setter Property="TextColor" Value="White"></Setter>
         </Style>
 
-        <Style x:Key="accentLabel" TargetType="Label">
-            <Setter Property="TextColor" Value="{StaticResource accentColor}"/>
-        </Style>
+        
     </Application.Resources>
 
 </Application>
