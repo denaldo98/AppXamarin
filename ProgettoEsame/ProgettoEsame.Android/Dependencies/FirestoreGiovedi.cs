@@ -78,14 +78,10 @@ namespace ProgettoEsame.Droid.Dependencies
         {
             hasReadGiovedi = false;
             var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("users").Document(Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid).Collection("Giovedi");
-            //var query = collection.WhereEqualTo("author", Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid);
-            //query.Get().AddOnCompleteListener(this);  //ritorna i documenti della collezione. Quando il metodo get è completato viene chiamato l'OnComplete
-            //var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("subscriptions"); //per noi va bene così
-            //collection.Get().AddOnCompleteListener(this);
             collection.Get().AddOnCompleteListener(this);
-            for (int i = 0; i < 25; i++)  //per aspettare che vengano lette . Aumentare eventualmente 
+            for (int i = 0; i < 25; i++)
             {
-                await System.Threading.Tasks.Task.Delay(100);  //aspettiamo 100 millisecondi, in totale 2.5 secondi. Aumentare eventualmente
+                await System.Threading.Tasks.Task.Delay(100);
                 if (hasReadGiovedi)
                     break;
             }
@@ -113,10 +109,7 @@ namespace ProgettoEsame.Droid.Dependencies
         {
             if (task.IsSuccessful)
             {
-                var documents = (QuerySnapshot)task.Result;  //bisognerebbe verificare che tipo di documento è
-                                                             //var doc = documents.Documents[0]; //verificare il tipo di documento
-
-
+                var documents = (QuerySnapshot)task.Result;
                 giovediList.Clear();
                 foreach (var doc in documents.Documents)
                 {

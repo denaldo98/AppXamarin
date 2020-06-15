@@ -12,11 +12,7 @@
             <vm:CorsoVM x:Key="vm"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"
-                     Clicked="ToolbarItem_Clicked"/>
-    </ContentPage.ToolbarItems>-->
-
+    
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.iOS>10,20,10,5</OnPlatform.iOS>
@@ -45,7 +41,7 @@
                     <ViewCell>
                                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
                                         <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" MaxLines="1" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="370"/>
-                             <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding NumCFU}"/>
+                                        <Label HorizontalOptions="End" WidthRequest="30" FontSize="18" MaxLines="1" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding NumCFU}"/>
 
                                     </StackLayout>
                     </ViewCell>
@@ -55,11 +51,7 @@
         </ListView>
                 </StackLayout>
             </ScrollView>
-            <!--<ImageButton Source="plus_icon5.png" 
-             Grid.Row="0"            
-            BackgroundColor="Transparent"
-            HorizontalOptions="End"  WidthRequest="160" HeightRequest="100" Margin="0,0,-20,15" VerticalOptions="End"
-            Clicked="ToolbarItem_Clicked"/>-->
+            
             <Button
              Grid.Row="0"
                 Text="+" FontSize="30"

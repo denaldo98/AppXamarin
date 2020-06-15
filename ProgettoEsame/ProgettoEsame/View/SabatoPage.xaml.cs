@@ -25,7 +25,7 @@ namespace ProgettoEsame.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            vm.ReadSabato(); //così ogni volta che ritorniamo in questa pag richiamo il metodo   
+            vm.ReadSabato();
         }
 
         void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)

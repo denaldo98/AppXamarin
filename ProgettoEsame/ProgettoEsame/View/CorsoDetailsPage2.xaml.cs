@@ -38,7 +38,7 @@ namespace ProgettoEsame.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            vm.ReadAppunti(); //così ogni volta che ritorniamo in questa pag richiamo il metodo   
+            vm.ReadAppunti();
         }
 
 

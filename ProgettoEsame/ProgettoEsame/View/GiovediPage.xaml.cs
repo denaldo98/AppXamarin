@@ -25,7 +25,7 @@ namespace ProgettoEsame.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            vm.ReadGiovedi(); //così ogni volta che ritorniamo in questa pag richiamo il metodo   
+            vm.ReadGiovedi();
         }
 
         void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)

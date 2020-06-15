@@ -22,33 +22,6 @@ namespace ProgettoEsame.Droid.Dependencies
         public Auth()
         {
         }
-
-        /*public async Task<bool> AuthenticateUser(string email, string password)
-        {
-            try
-            {
-                await Firebase.Auth.FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
-
-                return true;
-            }
-            catch (FirebaseAuthWeakPasswordException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthInvalidCredentialsException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthInvalidUserException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("An unknown erro occurred, please try again.");
-            }
-        }*/
-
         public async Task<string> DoLoginWithEP(string E, string P)    //login con email e password
         {
             try
@@ -59,7 +32,7 @@ namespace ProgettoEsame.Droid.Dependencies
             }
             catch (FirebaseAuthInvalidUserException notFound)
             {
-                //return notFound.Message;
+
                 notFound.PrintStackTrace();
                 return "";
 
@@ -67,7 +40,7 @@ namespace ProgettoEsame.Droid.Dependencies
             }
             catch (Exception err)
             {
-                //return err.Message;
+
                 return "";
             }
 
@@ -99,37 +72,7 @@ namespace ProgettoEsame.Droid.Dependencies
              return Firebase.Auth.FirebaseAuth.Instance.CurrentUser != null;
         }
 
-        /*public async Task<bool> RegisterUser(string name, string email, string password)
-        {
-            try { 
-            await Firebase.Auth.FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
-            var profileUpdates = new Firebase.Auth.UserProfileChangeRequest.Builder();
-            profileUpdates.SetDisplayName(name);
-            var build = profileUpdates.Build();
-
-            var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
-            await user.UpdateProfileAsync(build);
-
-            return true;
-            }
-            catch (FirebaseAuthWeakPasswordException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthInvalidCredentialsException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthUserCollisionException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("An unknown erro occurred, please try again.");
-            }
-        }*/
-
+       
         public async Task<string> DoRegisterWithEP(string N, string E, string P)   //registrazione con email e password
         {
             try
@@ -147,7 +90,7 @@ namespace ProgettoEsame.Droid.Dependencies
             }
             catch (Exception err)
             {
-                //return err.Message;
+
                 return "";
             }
 

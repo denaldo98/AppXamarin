@@ -21,7 +21,7 @@
                 <Label Text="- Posso disinstallare l'applicazione e cambiare dispositivo senza perdere i dati?" TextColor="Black" FontSize="Title" Margin="0,30,0,0"/>
                 <Label Text="Sì, i dati non vengono persi quando l'app viene disinstallata; dovrai solo effettuare il login!"  TextColor="Black" />
 
-            </StackLayout>
+        </StackLayout>
 
         
 

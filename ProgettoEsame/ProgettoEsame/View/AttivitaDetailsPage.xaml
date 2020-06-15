@@ -46,7 +46,7 @@
                    Text="{Binding Description, Mode=TwoWay}" Keyboard="Text" AutoSize="TextChanges"/>
             </ScrollView>
 
-            <Button Text="Delete" Margin="0,20,0,0"
+            <Button Text="Elimina" Margin="0,20,0,0"
                     Command="{Binding DeleteCommand}"
                     Style="{StaticResource destructiveButton}"/>
 

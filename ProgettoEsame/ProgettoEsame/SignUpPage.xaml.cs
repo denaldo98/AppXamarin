@@ -33,35 +33,34 @@ namespace ProgettoEsame
 
             if(string.IsNullOrWhiteSpace(nome))
             {
-                await DisplayAlert("SignUp failed", "Please enter name!", "OK");
+                await DisplayAlert("SignUp non riuscito", "Per favore, inserisci un nome!", "OK");
             } 
             else if (string.IsNullOrWhiteSpace(mail))
             {
-                await DisplayAlert("SignUp failed", "Please enter email!", "OK");
+                await DisplayAlert("SignUp non riuscito", "Per favore, inserisci l'e-mail!", "OK");
             }
             else if (string.IsNullOrEmpty(pass))
             {
-                await DisplayAlert("SignUp failed", "Please enter password!!", "OK");
+                await DisplayAlert("SignUp non riuscito", "Per favore, inserisci la password!", "OK");
             }
             else if (pass.Length < 6)
             {
-                await DisplayAlert("SignUp failed", "Password too short, enter minimum 6 characters!", "OK");
+                await DisplayAlert("SignUp non riuscito", "Password troppo corta, inserisci almeno 6 caratteri!", "OK");
             }
             else if (!string.Equals(pass, confpass))
             {
-                await DisplayAlert("SignUp failed", "Le password non coincidono!", "OK");
+                await DisplayAlert("SignUp non riuscito", "Le password non coincidono!", "OK");
             } else
             {
                 string token = await Auth.DoRegisterWithEP(string.Concat(nome, " ", cognome), mail, pass);
-                //await DisplayAlert("ok", token, "OK");
                 if (token != "") //registrazione OK
                 {
-                    await DisplayAlert("SignUp successfull", "Press OK to continue to Home Page", "OK");
+                    await DisplayAlert("SignUp riuscito", "Premi OK per continuare verso l'Home Page", "OK");
                     App.Current.MainPage = new HomePage();
                 }
                 else //errore nella registrazione
                 {
-                    await DisplayAlert("Sign Up Failed", "E-mail or password are incorrect. Try again!", "OK");
+                    await DisplayAlert("SignUp non riuscito", "L'e-mail o la password non sono corrette. Riprova!", "OK");
                 }
 
             }
@@ -72,8 +71,7 @@ namespace ProgettoEsame
 
         async void BtnToLogin_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new LoginPage2());
-            //Navigation.RemovePage(this);
+
            App.Current.MainPage = new LoginPage2();
             
         }

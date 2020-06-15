@@ -31,7 +31,7 @@
                    Text="{Binding NumCFU, Mode=TwoWay}" MaxLength="2"/>
 
 
-            <Button Text="Delete"
+            <Button Text="Elimina"
                     Command="{Binding DeleteCommand}"
                     Style="{StaticResource destructiveButton}"/>
 

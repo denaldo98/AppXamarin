@@ -42,7 +42,7 @@ namespace ProgettoEsame
             item2.Clicked += (sender, args) => {
                 Navigation.PushAsync(new FaqPage());
             };
-            this.ToolbarItems.Add(item2); // "this" refers to a Page object
+            this.ToolbarItems.Add(item2);
 
             ToolbarItem item4 = new ToolbarItem
             {
@@ -54,7 +54,7 @@ namespace ProgettoEsame
             item4.Clicked += (sender, args) => {
                 Navigation.PushAsync(new PrivacyPage());
             };
-            this.ToolbarItems.Add(item4); // "this" refers to a Page object
+            this.ToolbarItems.Add(item4);
 
 
             ToolbarItem item3 = new ToolbarItem
@@ -70,7 +70,6 @@ namespace ProgettoEsame
                 {
                     Application.Current.Properties["logged"] = "false";
                     await Application.Current.SavePropertiesAsync();
-                    //Application.Current.Properties.Clear();
                     await DisplayAlert("Attenzione!", "Il logout è stato eseguito, l'app verrà chiusa!", "Ok");
                     await System.Threading.Tasks.Task.Delay(1000);
                     System.Diagnostics.Process.GetCurrentProcess().Kill();

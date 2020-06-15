@@ -13,11 +13,7 @@
             <vm:AppelloVM x:Key="vm"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"
-                     Clicked="ToolbarItem_Clicked"/>
-    </ContentPage.ToolbarItems>-->
-
+    
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.iOS>10,20,10,5</OnPlatform.iOS>
@@ -35,36 +31,31 @@
             </Grid.RowDefinitions>
 
             <ScrollView Grid.Row="0">
-            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical">
 
-                <ListView BindingContext="{StaticResource vm}" 
-                  RowHeight="70" 
-                  BackgroundColor="White"
-                  ItemsSource="{Binding Appelli}"
-                  SelectedItem="{Binding SelectedAppello, Mode=TwoWay}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
+                    <ListView BindingContext="{StaticResource vm}" 
+                      RowHeight="70" 
+                      BackgroundColor="White"
+                      ItemsSource="{Binding Appelli}"
+                      SelectedItem="{Binding SelectedAppello, Mode=TwoWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
 
-                    <ViewCell>
+                                <ViewCell>
                                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="8,10,10,15" BackgroundColor="#FFFFE8"  Margin="5,5,5,5">
                                         <Label HorizontalOptions="StartAndExpand" FontSize="25" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Text="{Binding Name}" LineBreakMode="TailTruncation" WidthRequest="280"/>
-                                        <Label HorizontalOptions="End" FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding Date}"/>
-                         </StackLayout>
-                     
-                    </ViewCell>
+                                        <Label HorizontalOptions="End" WidthRequest="110" MaxLines="1"  FontSize="18" TextColor="Black" VerticalTextAlignment="Center" Text="{Binding Date}"/>
+                                    </StackLayout>
 
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                </ViewCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
 
                 </StackLayout>
             </ScrollView>
-            <!--<ImageButton Source="plus_icon5.png" 
-             Grid.Row="0"            
-            BackgroundColor="Transparent"
-            HorizontalOptions="End"  WidthRequest="160" HeightRequest="100" Margin="0,0,-20,15" VerticalOptions="End"
-            Clicked="ToolbarItem_Clicked"/>-->
-            <Button
+           <Button
              Grid.Row="0"
                 Text="+" FontSize="30"
                   BackgroundColor="Orange" BorderRadius="35" TextColor="White" HorizontalOptions="End" WidthRequest="60" HeightRequest="60" Margin="0,0,10,10" VerticalOptions="End"
